@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Comtrade Software</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="glavni">
+        <header>
+            <div>
+                <div class="levo"><img src="images/comtrade-logo.png" alt="comtrade-logo"></div>
+                <div class="centar">
+                    <h1>Comtrade Frontend Development</h1>
+                    <h2>Obuka za frontend developera</h2>
+                    <a href="#">Početna</a>
+                    <a href="#">HTML</a>
+                    <a href="#">CSS</a>
+                    <a href="#">JavaScript</a>
+                    <a href="#">Kontakt</a>
+                </div>
+                <div class="desno">
+                    <form action="#"></form>
+                    <input type="text" name="search" placeholder="Pronađi..." class="pronadji">
+                    <br>
+                    <select name="jezik" id="jezik">
+                        <option value="izaberi jezik">Izaberi jezik</option>
+                        <option value="engleski">Engleski</option>
+                    </select>
+                </div>
+            </div>
+
+        </header>
+        <section>
+            <div id="nav-levo">
+                <h3>Koraci do <br>
+                    developera</h3>
+                <img src="images/steps.png" alt="steps">
+                <ul>
+                    <li>Uvod u HTML
+                        <ol type="1">
+                            <li>Definicija HTML-a</li>
+                            <li>Osnivni tagovi</li>
+                            <li>HTML atributi</li>
+                            <li>Forme</li>
+                        </ol>
+                    </li>
+                    <li>Uvod u CSS</li>
+                    <li>Bootstrap</li>
+                    <li>Uvod u JavaScript</li>
+                    <li>jQuery</li>
+                    <li>Uvod u JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>React.js</li>
+                </ul>
+            </div>
+            <div id="content">
+                <h3>Uvod u HTML</h3>
+                <p><strong>HTML definicija</strong></p>
+                <hr>
+                <p><strong>HTML</strong> služi da definišemo <strong>strukturu</strong> dokumenta</p>
+                <p><strong>HTML tagovi</strong></p>
+                <hr>
+                <p>Većina HTML tagova mora imati otvoren i zatvoren tag.</p>
+                <p>Otvoren tag se piše: &lth1&gt</p>
+                <p>Zatvorn tag se piše: &lt/h1&gt</p>
+
+                <div class="blockquote">
+                    <p>Blockquote</p>
+                    <p>
+                        Ovo je tag blockquote koji se koristi da se nešto izdvoji iz teksta kao npr.<br>
+                        <strong>Tagovi koji imaju otvoren i zatvoren tag se nazivaju dvostrukim tagovima.<br>
+                            Tagovi sa jednim tagom se nazivaju jednostruki tagovi.</strong>
+                    </p>
+                </div>
+                <h3>HTML Tabele</h3>
+                <table border="1">
+                    <tr>
+                        <th>
+                            Tehnologija
+                        </th>
+                        <th>
+                            Nivo
+                        </th>
+                        <th>
+                            Link
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>HTML5</td>
+                        <td>Master</td>
+                        <td><a href="#" target="_blank">Link treba da se otvara u novom tabu</a></td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td>Master</td>
+                        <td><a href="#" target="_blank">Link treba da se otvara u novom tabu</a></td>
+                    </tr>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">
+                                Mozete nam pisati na sledeću email adresu <a href="#">branko.stankovic@code.edu.rs</a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <h3>HTML Forme</h3>
+                <form action="#">
+                    <fieldset>
+                        <legend>Ostavi komentar</legend>
+                        <input type="email" name="email" id="email" placeholder="email">
+                        <br>
+                        <label for="komentar">Komentar</label><br>
+                        <textarea name="komentar" id="komentar" cols="25" rows="5"></textarea>
+                        <br>
+                        <label for="slanje_slika">Pošalji nam neke slike</label><br>
+                        <input type="file" id="slanje_slika">
+                        <br>
+                        <input type="submit" value="Ostavi komentar">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Popuni anketu</legend>
+                        <label for="anketa">Da li vam se sviđa sajt</label>
+                        <input type="radio" name="anketa" id="anketa" value="da">Da
+                        <input type="radio" name="anketa" id="anketa1" value="ne">Ne
+                        <br>
+                        <label for="nauceno">Šta ste naučili</label><br>
+                        <select name="nauceno" id="nauceno" size="5">
+                            <option value="html">HTML</option>
+                            <option value="css">Css</option>
+                            <option value="bootstrap">Bootstrap</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="react.js">React.js</option>
+                        </select><br>
+                        <label for="uslovi">Potvrdi uslove korišćenja</label>
+                        <input type="checkbox" id="uslovi">
+                        <br>
+                        <input class="posalji" type="submit" value="Pošalji">
+                    </fieldset>
+                </form>
+            </div>
+            <div id="sprite-desno">
+                <h3>Css Sprite</h3>
+                <div class="html">
+                    <a href="#"></a>
+                </div>
+                <p>HTML</p>
+                <div class="css">
+                    <a href="#"></a><br>
+                </div>
+                <p>CSS 3</p>
+                <div class="bootstrap">
+                    <a href="#"></a><br>
+                </div>
+                <p>Bootstrap</p>
+                <div class="javascript">
+                    <a href="#"></a><br>
+                </div>
+                <p>JavaScript</p>
+                <div class="react">
+                    <a href="#"></a><br>
+                </div>
+                <p>React.js</p>
+            </div>
+
+
+        </section>
+        <footer>
+            <table>
+                <tr>
+                    <td>
+                        <p>HTML</p>
+                        <ul>
+                            <li>Tagovi</li>
+                            <li>Atributi</li>
+                            <li>Emmet</li>
+                            <li>HTML5</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>CSS</p>
+                        <ul>
+                            <li>Selektori</li>
+                            <li>CSS3</li>
+                            <li>Bootstrap</li>
+                            <li>SASS</li>
+                            <li>Less</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>JavaScript</p>
+                        <ul>
+                            <li>Uvod</li>
+                            <li>jQuery</li>
+                            <li>TypeScript</li>
+                            <li>React.js</li>
+                            <li>Unit testovi</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <div class="copyright">
+                <p>&copyCopyright by CodeEdu</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

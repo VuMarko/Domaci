@@ -1,0 +1,238 @@
+#a1 {
+    text-align: center;
+    border: 5px solid rgb(255, 0, 0);
+    font-size: 12px;
+}
+
+#a2 {
+    text-align: center;
+    border: 2px dashed rgb(0, 0, 255);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#a3 {
+    text-align: center;
+    border: 8px solid rgb(0, 0, 255);
+    font-style: italic;
+    font-size: 12px;
+}
+
+#a4 {
+    text-align: center;
+    border: 4px dotted rgb(0, 255, 0);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#a5 {
+    text-align: center;
+    border-style: dotted dashed;
+    border-width: 5px;
+    font-size: 22px;
+}
+
+#a6 {
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 12px;
+    border: 5px dotted;
+    border-color: rgb(255, 0, 0) rgb(0, 128, 0)
+}
+
+#a7 {
+    text-align: center;
+    font-size: 12px;
+    border: 5px dotted;
+    border-color: rgb(0, 0, 255) rgb(0, 0, 0) rgb(255, 255, 0)
+}
+
+#a8 {
+    text-align: center;
+    font-size: 12px;
+    border: 5px dotted;
+    border-color: rgb(255, 0, 0) rgb(0, 128, 0) rgb(0, 0, 255) rgb(0, 0, 0);
+}
+
+#a9 {
+    text-align: center;
+    font-size: 12px;
+    border: 25px solid;
+    border-color: rgb(255, 0, 0) rgb(0, 128, 0) rgb(0, 0, 255) rgb(0, 0, 0);
+    background: rgb(255, 255, 0);
+}
+
+#a10 {
+    text-align: center;
+    font-size: 12px;
+    border: 25px solid;
+    border-color: rgb(255, 0, 0) rgb(0, 128, 0) rgb(0, 0, 255) rgb(0, 0, 0);
+    background: rgb(255, 255, 0);
+    border-radius: 50%;
+}
+
+#a11 {
+    text-align: center;
+    font-size: 12px;
+    text-decoration: line-through;
+    border: 25px solid;
+    border-color: rgb(255, 0, 0) rgb(0, 128, 0) rgb(0, 0, 255) rgb(0, 0, 0);
+    border-radius: 50%;
+    line-height: 8;
+}
+
+#a12 {
+    border: 2px solid rgb(0, 0, 0);
+    padding: 23px;
+}
+
+#a12 div {
+    text-align: center;
+    border: 2px solid rgb(255, 0, 0);
+    height: 96px;
+}
+
+#a13 {
+    border: 10px solid rgb(255, 20, 147);
+    padding: 15px;
+    background: rgb(255, 255, 0);
+}
+
+#a13 div {
+    font-size: 12px;
+    text-align: center;
+    border: 5px solid rgb(0, 0, 255);
+    background: rgb(255, 0, 0);
+    height: 90px;
+}
+
+#a14 {
+    border: 10px solid rgb(255, 20, 147);
+    outline: 5px solid rgb(0, 128, 0);
+    padding: 15px;
+    background: rgb(255, 255, 0);
+}
+
+#a14 div {
+    font-size: 12px;
+    text-align: center;
+    outline: 5px solid rgb(0, 128, 0);
+    border: 5px solid rgb(0, 0, 255);
+    background: rgb(255, 0, 0);
+    height: 90px;
+}
+
+#a15 {
+    border: 2px solid rgb(0, 0, 0);
+    position: relative;
+}
+
+#a15 div {
+    text-align: center;
+    font-size: 12px;
+    border: 2px solid rgb(255, 0, 0);
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    width: 132px;
+    height: 132px;
+}
+
+#a16 {
+    position: relative;
+    border: 2px solid rgb(0, 0, 0);
+    top: 10px;
+}
+
+#a16 div {
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    border: 2px solid rgb(255, 0, 0);
+    width: 132px;
+    height: 132px;
+    top: -13px;
+    left: -13px;
+}
+
+#a17 {
+    position: relative;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+#a17 div {
+    position: absolute;
+    text-align: right;
+    font-size: 12px;
+    border: 2px solid rgb(255, 0, 0);
+    width: 132px;
+    height: 132px;
+    top: -13px;
+    left: -13px;
+}
+
+#a18 {
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px;
+}
+
+#a18 div {
+    text-align: center;
+    font-size: 12px;
+    border: 2px solid rgb(255, 0, 0);
+    width: 132px;
+    height: 132px;
+    overflow-y: scroll;
+}
+
+#a19 {
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px;
+    overflow-x: scroll;
+}
+
+#a19 div {
+    text-align: center;
+    font-size: 12px;
+    border: 2px solid rgb(255, 0, 0);
+    width: 1000px;
+    height: 100px;
+}
+
+#a20 {
+    position: relative;
+    border: 2px solid rgb(0, 0, 0);
+    background: rgb(255, 0, 0);
+    z-index: 1;
+}
+
+#a20 div {
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    padding: 14px 0px 24px;
+    width: 80px;
+}
+
+#a20 div:nth-child(1) {
+    background: rgb(0, 0, 255);
+    z-index: 2;
+    top: 55px;
+    left: 65px;
+}
+
+#a20 div:nth-child(2) {
+    background: rgb(0, 128, 0);
+    z-index: 3;
+    top: 85px;
+    left: 15px;
+}
+
+#a20 div:nth-child(3) {
+    background: rgb(255, 255, 0);
+    z-index: 4;
+    top: 15px;
+    left: 5px;
+}

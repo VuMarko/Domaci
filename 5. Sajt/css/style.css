@@ -1,0 +1,324 @@
+
+/* Body */
+
+#glavni {
+    margin: auto;
+    max-width: 1600px;
+}
+
+body {
+    background: url(../images/doodles.png);
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: auto;
+    height: 100%;
+}
+
+/* Header */
+
+header {
+    border: 1px solid lightgray;
+    background-color: rgb(255, 255, 255, 0.7);
+    padding: 25px;
+}
+
+header div {
+    margin: 0 15px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+header .levo {
+    padding-bottom: 35px;
+    width: 15%;
+    float: left;
+}
+
+header .levo img {
+    text-align: left;
+    width: 150px;
+}
+
+header .centar {
+    width: 60%;
+    float: left;
+}
+
+header .centar h1 {
+    font-size: 40px;
+    margin: 5px 10px;
+}
+
+header .centar h1 p {
+    display: inline;
+}
+
+header .centar h1 p:first-letter {
+    color: blue;
+}
+
+header .centar h2 {
+    padding: 15px 0px;
+    color: red;
+    margin: 5px 10px;
+}
+
+
+header .centar a {
+    background-color: rgb(91, 174, 226);
+    color: white;
+    text-decoration: none;
+    padding: 5px 35px;
+}
+
+header .desno {
+    width: 15%;
+    float: left;
+}
+
+header .desno .pronadji {
+    background: url(../images/search.png) 151px 2px;
+    width: 174px;
+    height: 20px;
+    background-repeat: no-repeat;
+
+}
+
+
+header .desno select {
+    margin-top: 10px;
+    width: 174px;
+    background-color: lightgray;
+}
+
+/* Section */
+
+section {
+    overflow: hidden;
+}
+
+section #nav-levo img {
+    padding-left: 55px;
+}
+
+section #nav-levo {
+    border: 1px solid rgb(211, 211, 211);
+    background-color: rgba(255, 255, 255, 0.7);
+    float: left;
+    padding: 5px;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 15%;
+    margin: 10px;
+}
+
+section #nav-levo h3 {
+    text-align: center;
+}
+
+section #content {
+    border: 1px solid lightgray;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    float: left;
+    width: 67%;
+    margin: 10px;
+}
+
+section #content h3 {
+    text-align: center;
+    font-size: 35px;
+    padding: 15px 0px;
+}
+
+section #content hr {
+    margin: 15px 0px;
+}
+
+section #content .blockquote {
+    border-style: none solid;
+    border-width: 2px;
+    border-color: rgb(128, 164, 180);
+    padding: 20px 20px;
+    margin: 10px 25px;
+}
+
+section #content .blockquote p:nth-of-type(1) {
+    color: rgb(147, 76, 242);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+section #content table {
+    width: 100%;
+    border: 1px solid lightgray;
+}
+
+section #content table tr {
+    text-align: center;
+}
+
+section #content table th {
+    background-color: rgb(238, 238, 238);
+}
+
+section #content table tfoot td {
+    background-color: rgb(89, 174, 228);
+    color: white;
+    text-align: center;
+}
+
+section #content table tfoot td a {
+    color: yellow;
+}
+
+section #content fieldset {
+    float: left;
+    width: 40%;
+    margin: 10px;
+    border: 1px solid lightgray;
+    height: 300px;
+}
+
+section #content fieldset input:nth-of-type(1) {
+    margin: 15px 0px;
+}
+
+section #content fieldset textarea {
+    margin: 15px 0px;
+}
+
+
+section #content fieldset input:nth-of-type(3) {
+    margin: 15px 0px;
+    background-color: rgb(89, 174, 228);
+    border: none;
+    padding: 5px 25px;
+    color: white;
+}
+
+section #content fieldset .posalji {
+    margin: 5px 0px;
+    background-color: rgba(89, 174, 228, 1);
+    border: none;
+    padding: 5px 55px;
+    color: white;
+}
+
+section #sprite-desno {
+    margin: auto;
+    border: 1px solid lightgray;
+    background-color: rgba(255, 255, 255, 0.7);
+    float: left;
+    padding: 0px 50px;
+    margin: 10px;
+    text-align: center;
+}
+
+section #sprite-desno p {
+    font-weight: bold;
+}
+
+section #sprite-desno .html {
+    left: 0px;
+    width: 75px;
+    height: 72px;
+    background: url(../images/sprite.png) 2px 129px;
+    background-size: auto;
+    margin-top: 10px;
+   
+}
+
+#sprite-desno .html p {
+    text-align: center;
+    display: inline-block;
+}
+
+section #sprite-desno .css {
+    left: 0px;
+    width: 75px;
+    height: 72px;
+    background: url(../images/sprite.png) -66px 186px;
+    background-size: auto;
+    margin-top: 50px;
+}
+
+#sprite-desno .css p {
+    text-align: center;
+    display: inline-block;
+}
+
+section #sprite-desno .bootstrap {
+    left: 0px;
+    width: 75px;
+    height: 58px;
+    background: url(../images/sprite.png) 8px 187px;
+    background-size: auto;
+    margin-top: 50px;
+}
+
+#sprite-desno .bootstrap p {
+    text-align: center;
+    display: inline-block;
+}
+
+section #sprite-desno .javascript {
+    left: 0px;
+    width: 75px;
+    height: 45px;
+    background: url(../images/sprite.png) -67px 114px;
+    background-size: auto;
+    margin-top: 50px;
+}
+
+#sprite-desno .javascript p {
+    text-align: center;
+    display: inline-block;
+}
+
+section #sprite-desno .react {
+    left: 0px;
+    width: 75px;
+    height: 60px;
+    background: url(../images/sprite.png) -65px 61px;
+    background-size: auto;
+    margin-top: 50px;
+}
+
+#sprite-desno .react p {
+    text-align: center;
+    display: inline-block;
+}
+
+/* Footer */
+
+footer table {
+    background-color: rgba(122, 191, 232, 0.7);
+    color: white;
+    width: 100%;
+    padding: 10px 400px;
+}
+
+footer table td p {
+    text-align: center;
+    padding-top: 10px;
+}
+
+footer table td:nth-of-type(2) {
+    border-style: none solid;
+    border-width: 1px;
+}
+
+footer .copyright {
+    background-color: rgba(102, 104, 142, 0.7);
+}
+
+footer .copyright p {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding: 3px 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

@@ -1,0 +1,631 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.container {
+    width: 600px;
+    height: 350px;
+    overflow: auto;
+    display: block;
+    float: left;
+    border: solid deeppink 1px;
+    background: brown;
+    margin: 20px;
+}
+
+header {
+    background: red;
+    color: #fff;
+    border: solid #fff 2px;
+}
+
+footer {
+    background: indianred;
+    color: #fff;
+    border: solid #fff 2px;
+}
+
+main {
+    background: blue;
+    border: solid #fff 2px;
+}
+
+article {
+    background: lime;
+    border: solid black 1px;
+}
+
+.first {
+    background: orange;
+}
+
+.second {
+    background: green;
+}
+
+.third {
+    background: lightcoral;
+}
+
+.fourth {
+    background: yellow;
+}
+
+.fifth {
+    background: lightblue;
+}
+
+.sixth {
+    background: olive;
+}
+
+header, footer, .first, .second, .third, .fourth, .fifth, .sixth {
+    padding: 5px;
+}
+
+/* Header 1 */
+
+#container1 .first, #container1 .second, #container1 .third {
+    float: left;
+    width: 33.33%;
+    height: 69px;
+}
+
+#container1 .fourth {
+    clear: both;
+}
+
+#container1 .fourth, #container1 .fifth, #container1 .sixth, #container1 header, #container1 footer {
+    height: 55px;
+}
+
+/* Header 2 */
+
+#container2 article {
+    float: left;
+    width: 33.33%;
+    height: 150px;
+}
+
+/* Header 3 */
+
+#container3 article {
+    float: left;
+}
+
+#container3 .first, #container3 .second, #container3 .third {
+    width: 33.33%;
+    height: 75px;
+}
+
+#container3 .fourth, #container3 .fifth {
+    width: 50%;
+    height: 75px;
+}
+
+#container3 .sixth {
+    width: 100%;
+    height: 75px;
+}
+
+#container3 header {
+    height: 55px;
+}
+
+#container3 footer {
+    clear: both;
+    height: 55px;
+}
+
+/* Header 4 */
+
+#container4 article {
+    float: left;
+    width: 16.66%;
+    height: 82px;
+}
+
+#container4 .second {
+    height: 110px;
+}
+
+#container4 header {
+    height: 45px;
+}
+
+#container4 footer {
+    clear: both;
+    height: 45px;
+}
+
+/* Header 5 */
+
+#container5 article {
+    float: left;
+    width: 16.66%;
+    height: 200px;
+}
+
+#container5 header {
+    height: 45px;
+}
+
+#container5 footer {
+    clear: both;
+    height: 45px;
+}
+
+/* Header 6 */
+
+#container6 article {
+    float: left;
+    width: 16.66%;
+    height: 200px;
+}
+
+/* Header 7 */
+
+#container7 article {
+    float: left;
+    width: 50%;
+    height: 55px;
+}
+
+#container7 .fifth, #container7 .sixth {
+    width: 100%;
+}
+
+#container7 header {
+    height: 50px;
+}
+
+#container7 footer {
+    clear: both;
+    height: 50px;
+}
+
+/* Header 8 */
+
+#container8 article {
+    float: left;
+    width: 25%;
+    height: 70px;
+}
+
+#container8 .fifth, #container8 .sixth {
+    width: 50%;
+    height: 60px;
+}
+
+#container8 header {
+    height: 50px;
+}
+
+#container8 footer {
+    clear: both;
+    height: 50px;
+}
+
+/* Header 9 */
+
+#container9 article {
+    float: left;
+    width: 33.33%;
+    height: 60px;
+}
+
+#container9 .fourth {
+    width: 50%;
+    height: 60px;
+}
+
+#container9 .fifth {
+    width: 25%;
+    height: 60px;
+}
+
+#container9 .sixth {
+    width: 25%;
+    height: 60px;
+}
+
+#container9 header {
+    height: 50px;
+}
+
+#container9 footer {
+    clear: both;
+    height: 50px;
+}
+
+/* Header 10 */
+
+#container10 article {
+    float: left;
+    width: 33.33%;
+    height: 60px;
+}
+
+#container10 .fourth {
+    width: 25%;
+    height: 60px;
+}
+
+#container10 .fifth {
+    width: 50%;
+    height: 60px;
+}
+
+#container10 .sixth {
+    width: 25%;
+    height: 60px;
+}
+
+#container10 header {
+    height: 50px;
+}
+
+#container10 footer {
+    clear: both;
+    height: 50px;
+}
+
+/* Header 11 */
+
+#container11 article {
+    float: left;
+    height: 60px;
+}
+
+#container11 .first {
+    width: 20%;
+}
+
+#container11 .second {
+    width: 60%;
+}
+
+#container11 .third {
+    width: 20%;
+}
+
+#container11 .fourth {
+    width: 30%;
+}
+
+#container11 .fifth {
+    width: 40%;
+}
+
+#container11 .sixth {
+    width: 30%;
+}
+
+#container11 header {
+    height: 50px;
+}
+
+#container11 footer {
+    clear: both;
+    height: 50px;
+}
+
+/* Header 12 */
+
+#container12 article {
+    float: left;
+    height: 60px;
+}
+
+#container12 .first, #container12 .fourth, #container12 .fifth {
+    width: 30%;
+}
+
+#container12 .second, #container12 .third, #container12 .sixth {
+    width: 70%;
+}
+
+#container12 footer {
+    clear: both;
+    height: 50px;
+}
+
+#container12 header {
+    height: 50px;
+}
+
+#container12 footer {
+    clear: both;
+    height: 50px;
+}
+
+/* Header 13 */
+
+#container13 article {
+    height: 45px;
+}
+
+#container13 .first {
+    float: left;
+    display: block;
+    width: 80%;
+}
+
+#container13 .second {
+    float: left;
+    width: 80%;
+    clear: both;
+}
+
+#container13 .third {
+    float: right;
+    width: 80%;
+}
+
+#container13 .fourth {
+    float: right;
+    width: 80%;
+}
+
+#container13 .fifth {
+    float: left;
+    width: 50%;
+}
+
+#container13 .sixth {
+    float: left;
+    width: 50%;
+}
+
+#container13 header {
+    height: 50px;
+}
+
+#container13 footer {
+    float: left;
+    width: 100%;
+    height: 50px;
+}
+
+/* Header 14 */
+
+#container14 article {
+    display: inline-block;
+}
+
+#container14 header {
+    height: 50px;
+}
+
+#container14 footer {
+    height: 50px;
+}
+
+/* Header 15 */
+
+#container15 article {
+    height: 50px;
+}
+
+#container15 header {
+    width: 50%;
+}
+
+#container15 footer {
+    float: right;
+    width: 50%;
+}
+
+#container15 .first {
+    display: block;
+    width: 40%;
+}
+
+#container15 .second {
+    display: block;
+    width: 40%;
+    clear: right;
+}
+
+#container15 .third {
+    display: block;
+    width: 30%;
+    float: left;
+}
+
+#container15 .fourth {
+    display: block;
+    width: 80%;
+}
+
+#container15 .fifth {
+    display: block;
+    width: 50%;
+}
+
+#container15 .sixth {
+    display: block;
+}
+
+/* Header 16 */
+
+#container16 article {
+    float: left;
+    width: 20%;
+    height: 100px;
+}
+
+#container16 .sixth {
+    float: left;
+    width: 100%;
+}
+
+#container16 header {
+    height: 50px;
+}
+
+#container16 footer {
+    float: left;
+    width: 100%;
+    height: 50px;
+}
+
+/* Header 17 */
+
+#container17 article {
+    height: 50px;
+}
+
+#container17 .first {
+    width: 30%;
+}
+
+#container17 .second {
+    float: left;
+    width: 30%;
+    height: 51px;
+}
+
+#container17 .third {
+    display: inline-block;
+    width: 30%;
+}
+
+#container17 .fourth {
+    float: left;
+    display: block;
+    width: 50%;
+}
+
+#container17 .fifth {
+    float: left;
+    width: 50%;
+}
+
+#container17 .sixth {
+    float: left;
+    width: 100%;
+}
+
+#container17 footer {
+    clear: both;
+    height: 50px;
+    width: 100%;
+}
+
+/* Header 18 */
+
+#container18 article {
+    height: 60px;
+}
+
+#container18 .second, #container18 .third, #container18 .fourth {
+    float: left;
+    width: 33.33%;
+}
+
+#container18 .fifth, #container18 .sixth {
+    float: left;
+    width: 100%;
+    height: 70px;
+}
+
+#container18 .sixth {
+    float: left;
+    width: 100%;
+}
+
+#container18 footer {
+    clear: both;
+    height: 60px;
+    width: 100%;
+}
+
+/* Header 19 */
+
+#container19 article {
+    float: left;
+    height: 70px;
+}
+
+#container19 .first {
+    float: right;
+    width: 33.33%;
+}
+
+#container19 .second, #container19 .third {
+    float: left;
+    width: 33.33%;
+}
+
+#container19 .fourth {
+    float: right;
+    width: 50%;
+}
+
+#container19 .fifth {
+    float: left;
+    width: 50%;
+}
+
+#container19 .sixth {
+    float: left;
+    width: 100%;
+}
+
+#container19 header {
+    height: 40px;
+    width: 100%;
+}
+
+#container19 footer {
+    clear: both;
+    height: 40px;
+    width: 100%;
+}
+
+/* Header 20 */
+
+#container20 article {
+    height: 50px;
+}
+
+#container20 .third {
+    float: right;
+    width: 33.33%;
+}
+
+#container20 .first {
+    float: left;
+    width: 33.33%;
+}
+
+#container20 .second {
+    float: left;
+    width: 33.33%;
+}
+
+#container20 .fifth {
+    float: right;
+    width: 50%;
+}
+
+#container20 .fourth {
+    float: left;
+    width: 50%;
+}
+
+#container20 .sixth {
+    float: right;
+    width: 100%;
+}
+
+#container20 footer {
+    float: left;
+    height: 40px;
+    width: 50%;
+}

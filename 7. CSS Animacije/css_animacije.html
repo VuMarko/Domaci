@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Animacije</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="glavni">
+        <header>
+            <h1 class="naslov">CSS Animacije</h1>
+            <nav class="navigacija">
+                <ul>
+                    <li class="box1 vibracija">
+                        <a class="a1" href="#">Pocetna</a>
+                    </li>
+                    <li class="box2 pulsiranje">
+                        <a class="a2" href="#transform">Transform</a>
+                    </li>
+                    <li class="box3 mrdanje">
+                        <a class="a3" href="#transition">Transition</a>
+                    </li>
+                    <li class="box4 krivljenje">
+                        <a class="a4" href="#animation">Animation</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="container">
+            <div class="transform col-md-12" id="transform">
+                <h2>UVOD</h2>
+                <hr>
+                <p>Dva glavna svojstva omogućavaju animaciju iz CSS-a: <strong>transition</strong> i <strong>animation</strong>.</p>
+                <p>Transition (Tranzicija) se koristi da ublaži naglu promenu vrednosti izabranog CSS svojstva u
+                    određenom vremenskom periodu, tako što postepeno menja vrednosti CSS svojstva. Animation
+                    (Animacija) se takodje zasniva na promeni svojstva nekog elementa u toku vremena ali dozvoljava
+                    malo bolju kontrolu i ima dodatne druge specifičnosti.</p>
+                <p>U svojstvu “transition” se animacija izvršava samo na osnovu početnih i krajnjih vrednosti nekog CSS
+                    svojstva, dok kod svojstva “animation” imamo mogućnost da kroz @keyframe definišemo neograničen
+                    broj medjuvrednosti.</p>
+                <p>Svojstvo “animation” za razliku od “transition” može da odloži pokretanje animacije.</p>
+                <hr>
+                <h2 class="blur">TRANSFORMACIJE</h2>
+                <p>“Transform” nam omogućava da HTML element:</p>
+                <ul>
+                    <li><strong>transliramo duž osa</strong>
+                        <ul>
+                            <li>transform: translate(12px, 50%)</li>
+                            <li>transform: translateX(2em)</li>
+                            <li>transform: translateY(3in)</li>
+                            <li>transform: translate3d(x, y, z)</li>
+                        </ul>
+                    </li>
+                    <li><strong>rotiramo</strong>
+                        <ul>
+                            <li>transform: rotateX(10deg)</li>
+                            <li>transform: rotateY(10deg)</li>
+                            <li>transform: rotateZ(10deg)</li>
+                            <li>transform: rotate3d(x, y, z)</li>
+                        </ul>
+                    </li>
+                    <li><strong>skaliramo po veličini</strong>
+                        <ul>
+                            <li>transform: scale(2, 0.5)</li>
+                            <li>transform: scaleX(2)</li>
+                            <li>transform: scaleY(0.5)</li>
+                            <li>transform: scale3d(sx, sy, sz)</li>
+                        </ul>
+                    </li>
+                    <li><strong>iskosimo</strong>
+                        <ul>
+                            <li>transform: skew(30deg, 20deg)</li>
+                            <li>transform: skewX(30deg)</li>
+                            <li>transform: skewY(1.07rad)</li>
+                        </ul>
+                    </li>
+                    <li><strong>dodamo perspektivu</strong>
+                        <ul>
+                            <li>transform: perspective(17px)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <h3>Primeri 2D</h3>
+                <div class="row">
+                    <div class="col-md-4 translate-primer">
+                        <h4>Translate()</h4>
+                        <p>pomera element u odnosu na trenutnu poziciju.</p>
+                    </div>
+                    <div class="col-md-4 rotate-primer">
+                        <h4>Rotate()</h4>
+                        <p>rotira element u zavisnosti od zadatog ugla.</p>
+                    </div>
+                    <div class="col-md-4 scale-primer">
+                        <h4>Scale()</h4>
+                        <p>uvećava ili smanjuje veličinu elementa u zavisnosti od parametara</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 skewx-primer">
+                        <h4>SkewX()</h4>
+                        <p>iskosiće element po X osi.</p>
+                    </div>
+                    <div class="col-md-4 skewy-primer">
+                        <h4>SkewY()</h4>
+                        <p>iskosiće element po Y osi.</p>
+                    </div>
+
+                    <div class="col-md-4 matrix-primer">
+                        <h4>Matrix()</h4>
+                        <p>metoda je kombinacija svih 2D metoda u jednoj i parametri izgledaju ovako:
+                            matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())</p>
+                    </div>
+                </div>
+                <h3>Primeri 3D</h3>
+                <div class="row">
+                    <div class="col-md-4 rotatex-primer">
+                        <h4>RotateX()</h4>
+                        <p>rotira element po X-osi u zavisnosti od zadatog ugla</p>
+                    </div>
+                    <div class="col-md-4 rotatey-primer">
+                        <h4>RotateY()</h4>
+                        <p>rotira element po Y-osi u zavisnosti od zadatog ugla.</p>
+                    </div>
+                    <div class="col-md-4 rotatez-primer ">
+                        <h4>ScaleZ()</h4>
+                        <p>rotira element po Z-osi u zavisnosti od zadatog ugla.</p>
+                    </div>
+                    <hr>
+                    <div class="col-md-12">
+                        <p>Spisak svih funkcija izgleda ovako: matrix(n,n,n,n,n,n), translate(x,y), translateX(n),
+                            translateY(n), scale(x,y), scaleX(n), scaleY(n), rotate(angle), skew(x-angle,y-angle),
+                            skewX(angle), skewY(angle).</p>
+                    </div>
+                    <hr>
+                    <div class="col-md-6">
+                        <p class="margin-top"><strong>3D transform osobine:</strong></p>
+                        <ul>
+                            <li>transform - primenjuje 2D ili 3D transformaciju na element</li>
+                            <li>transform-origin - omogućava da promenite poziciju transformisanog elementa</li>
+                            <li>transform-style - određuje kako da element bude prikazan u 3D prostoru</li>
+                            <li>perspective - određuje perspektivu</li>
+                            <li>perspective-origin - određuje donji položaj 3D elemeta</li>
+                            <li>backface-visibility - definiše da li će element biti vidljiv</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="margin-top"><strong>3D transform metode:</strong><br><br>
+                            matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n), translate3d(x,y,z), translateX(x),
+                            translateY(y),
+                            translateZ(z), scale3d(x,y,z), scaleX(x), scaleY(y), scaleZ(z), rotate3d(x,y,z,angle),
+                            rotateX(angle), rotateY(angle), rotateZ(angle), perspective(n).Ф</p>
+                    </div>
+                </div>
+            </div>
+            <div class="transition container" id="transition">
+                <h2 class="sirenje">TRANZICIJE</h2>
+                <p>Tranzicija se koristi da ublaži naglu promenu vrednosti izabranog CSS svojstva u određenom
+                    vremenskom periodu, tako što postepeno menja vrednosti CSS svojstva.
+                </p>
+                <p>Kod tranzicije razlikujemo 4 osobine:</p>
+                <ul>
+                    <li>transition-property
+                        <p>-definiše na kome CSS svojstvu će biti izvršena tranzicija.</p>
+                    </li>
+                    <li>transition-duration
+                        <p>-definiše trajanje tranzicije</p>
+                    </li>
+                    <li>transition-timing-function
+                        <p>-definiše funkciju koja će biti zadužena za brzinu tranzicije u vremenu.</p>
+                        <ul>
+                            <li><strong>linear</strong> – predefinisana tranzicija sa konstntnom brzinom</li>
+                            <li><strong>ease</strong> – predefinisana tranzicija koja ubrzava kroz sredinu pa usporava
+                                na kraju</li>
+                            <li><strong>ease-in</strong> – predefinisana tranzicija koja počinje sporo pa zatim ubrzava
+                                sve do kraja</li>
+                            <li><strong>ease-out</strong> - predefinisana tranzicija koja počinje velikom brzinom a
+                                zatim usporava do kraja</li>
+                            <li><strong>ease-in-out</strong> - predefinisana tranzicija koja počinje sporo, nakon čega
+                                ubrzava u sredini a zatim usporava do kraja</li>
+                            <li><strong>cubic-bezier(x1,y1,x2,y2)</strong> - programer sam definiše ponašanje funkcije</li>
+                        </ul>
+                    </li>
+                    <li>transition-delay
+                        <p>-definiše vreme nakon kojeg će početi tranzicija od trenutka aktiviranja tranzicije</p>
+                    </li>
+                </ul>
+                <p>Skracena sintaxa za transition</p>
+                <p>
+                    <code> .selector {
+                        transition: [property] [duration] [timing-function] [delay];}</code>
+                </p>
+                <br>
+                <p>
+                    Pokretanje tranzicije moze biti izvrseno na sledece nacine:
+                    <ul>
+                        <li>pseudo klasama
+                            <ul>
+                                <li>:hover – kada mišem predjemo preko elementa</li>
+                                <li>:focus – kada je element u fokusu</li>
+                                <li>:active – kada je link element aktivan tj. kliknut</li>
+                            </ul>
+                        </li>
+                        <li>menjanjem svojstva ili dodavanje klase koja sadrži promenu svojstva sa JavaScriptom.</li>
+                    </ul>
+                </p>
+                <h3>Primeri Tranzicije</h3>
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <p>Promena svojstava na hover<br>bez tranzicije</p>
+                        <div class="kocka1 kocka">
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <p class="">Promena svojstava na hover<br> sa tranzicijom</p>
+                        <div class="kocka2 kocka">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="animation container" id="animation">
+                <h2 class="flip">ANIMACIJE</h2>
+                <p class="tal">Animacija se zasniva na korišćenju sledećih svojstava:</p>
+                <ul>
+                    <li>animation-name
+                        <p>-Ovo svojstvo definiše ime @keyframes pravila po kome će se izvoditi animacija.
+                            CSS svojstvo @keyframes kontroliše medju-korake u animacijskoj sekvenci definisanjem
+                            stilova
+                            u toku trajanja animacije. Koristeći @keyframes možemo da definišemo tajming za primenu
+                            odredjenih CSS svojstava tokom sekvence animacije, 0% označava prvi trenutak animacije, dok
+                            100% pokazuje krajnje stanje animacije.</p>
+                    </li>
+                    <li>animation-duration
+                        <P>Trajanje jednog ciklusa animimacije. Inicjalna vrednost svojstva je 0s</P>
+                    </li>
+                    <li>
+                        <p>animation-timing-function</p>
+                        <p>Definisanje funkcije koja odredjuje brzinu izvršavanja u toku vremena. Inicjalna vrednost
+                            svojstva je <strong>ease</strong>.</p>
+                        <ul>
+                            <li>
+                                <p><strong>linear</strong> - predefinisana tranzicija sa konstntnom brzinom</p>
+                            </li>
+                            <li>
+                                <p><strong>ease</strong> - predefinisana tranzicija koja ubrzava kroz sredinu pa
+                                    usporava na kraju</p>
+                            </li>
+                            <li>
+                                <p><strong>ease-in</strong> - predefinisana tranzicija koja počinje sporo pa zatim
+                                    ubrzava sve do kraja.</p>
+                            </li>
+                            <li>
+                                <p><strong>ease-out</strong> - predefinisana tranzicija koja počinje velikom brzinom a
+                                    zatim usporava do kraja.</p>
+                            </li>
+                            <li>
+                                <p><strong>ease-in-out</strong> - predefinisana tranzicija koja počinje sporo, nakon
+                                    čega ubrzava u sredini a zatim usporava do kraja.</p>
+                            </li>
+                            <li>
+                                <p><strong>cubic-bezier(x1,y1,x2,y2)</strong> - programer sam definiše ponašanje
+                                    funkcije.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>animation-delay
+                        <p>Definiše vreme nakon kojeg će početi tranzicija od trenutka aktiviranja tranzicije.
+                            Inicjalna vrednost svojstva je 0s</p>
+                    </li>
+                    <li>animation-direction
+                        <p>Definiše smer izvršavanja animacije u odnosu na zadate podatke. Nakon svokog ciklusa se
+                            resetuje i ponavlja. Inicjalna vrednost svojstva je normal.</p>
+                        <ul>
+                            <li>
+                                <p><strong>normal</strong> - od definisanog početka pa do kraja.</p>
+                            </li>
+                            <li>
+                                <p><strong>reverse</strong> - od definisanog kraja ka početku.</p>
+                            </li>
+                            <li>
+                                <p><strong>alternate</strong> - prvo normalno do kraja pa onda reverse do početka.</p>
+                            </li>
+                            <li>
+                                <p><strong>alternate-reverse</strong> - prvo unazad do početka pa zatim unapred do
+                                    kraja.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>animation-iteration-count
+                        <p>Broj ciklusa animacija. Inicjalna vrednost svojstva je 1. Pored odredjenog broja može biti i
+                            “infinite”.</p>
+                    </li>
+                    <li>animation-fill-mode
+                        <p>definise koje vrednosti se primenjuju pre / posle animacije.Inicjalna vrednost svojstva je
+                            <strong>none</strong>.</p>
+                        <ul>
+                            <p><strong>none</strong> - lement je podešen na njegovo podrazumevano mesto pre pocetka
+                                animacije i vracca se u to podrazumevano mesto nakon sto se animacija zavrsi.</p>
+                        </ul>
+                        <ul>
+                            <p><strong>forwards</strong> - element ostaje na mestu definasanom za kraj animacije.</p>
+                        </ul>
+                        <ul>
+                            <p><strong>backwards</strong> - mesto elementa će se već primenjivati pre nego što se
+                                animacija zapravo pokrene.</p>
+                        </ul>
+                        <ul>
+                            <p><strong>both</strong> - nimacija će prihvati i forwards i backwards.</p>
+                        </ul>
+                    </li>
+                    <h3>Primer Animacije</h3>
+                    <div class="col-md-12">
+                        <div class="div-animacija">
+                            <div class="animacija1">
+                                <div class="boja1"></div>
+                            </div>
+                            <div class="animacija2">
+                                <div class="boja2"></div>
+                            </div>
+                            <div class="animacija3">
+                                <div class="boja3"></div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </main>
+        <footer>
+            <a href="#" id="myBtn">Vrh</a>
+
+            <div class="container copy">CREATED BY MARKO VUCENOVIC &COPY 2018</div>
+        </footer>
+    </div>
+</body>
+<a href=""></a>
+<link rel="stylesheet" href="">
+</html>

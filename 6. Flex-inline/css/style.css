@@ -1,0 +1,48 @@
+#blok1>div {
+    height: 74px;
+    width: 91px;
+}
+
+#blok2 .prva {
+    order: 1;
+}
+
+#blok3>div {
+    width: 145px;
+}
+
+#blok3 .treca {
+    flex-wrap: wrap;
+    width: 272px
+}
+
+#blok4>div {
+    width: 180px;
+}
+
+#blok4 .treca {
+    flex-wrap: wrap;
+    width: 97px
+}
+
+#blok5>div {
+    width: 172px;
+}
+
+#blok5 .treca {
+    flex-wrap: wrap;
+    width: 137px
+}
+
+#blok6>div {
+    height: 48px;
+    width: 166px;
+}
+
+#blok6 .prva, #blok6 .treca, #blok6 .peta {
+    align-self:flex-start;
+}
+
+#blok6 .druga, #blok6 .cetvrta, #blok6 .sesta {
+    align-self:flex-end;
+}
