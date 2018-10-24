@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+        .randombroj {
+            font-size: 25px;
+            text-align: center;
+        }
+
+        fieldset {
+            border: 2px groove;
+            padding: 10px;
+        }
+
+        legend {
+            width: inherit;
+            display: inline-block;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 20px;
+            color: red;
+            text-align: center;
+        }
+
+        .btn {
+            margin-left: 15px;
+        }
+
+        .tacka {
+            width: 25%;
+            height: 75px;
+        }
+
+        p {
+            margin: auto;
+        }
+
+        input {
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 1</legend>
+                    <div id="zadatak">
+                        <div id="randombroj1" class="randombroj"></div>
+                        <p id="odgovor1"></p>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 3</legend>
+                    <div id="zadatak3">
+                        <label for="pitanje3">Poluprecnik</label><br>
+                        <input type="text" id="pitanje3">
+                        <input type="button" value="Izracunaj obim" id="posalji3" class="btn btn-primary">
+                        <p id="odgovor3"></p>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 4</legend>
+                    <div id="zadatak4">
+                        <label for="pitanje4">Dinara</label><br>
+                        <input type="text" id="pitanje4">
+                        <input type="button" value="Konvertuj u eur" id="posalji4" class="btn btn-primary">
+                        <p id="odgovor4"></p>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 5</legend>
+                    <div id="zadatak5">
+                        <label for="pitanje5">Eura</label><br>
+                        <input type="text" id="pitanje5">
+                        <input type="button" value="Konvertuj u din" id="posalji5" class="btn btn-primary">
+                        <p id="odgovor5"></p>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 6</legend>
+                    <div id="zadatak6">
+                        <p id="odgovor6"></p>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 7</legend>
+                    <div id="zadatak7">
+                        <label for="pitanje7">Kad ste rodjeni?</label><br>
+                        <input type="text" id="pitanje7">
+                        <input type="button" value="Izracunaj" id="posalji7" class="btn btn-primary">
+                        <p id="odgovor7"></p>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 8</legend>
+                    <div id="zadatak8">
+                        <label for="pitanje8">Koliko imate godina?</label><br>
+                        <input type="text" id="pitanje8">
+                        <input type="button" value="Izracunaj" id="posalji8" class="btn btn-primary">
+                        <p id="odgovor8"></p>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 9</legend>
+                    <div id="zadatak9">
+                        <label for="pitanje9a">Koje godine ste rodjeni?</label><br>
+                        <input type="text" id="pitanje9a" placeholder="2000"><br>
+                        <label for="pitanje9b">U kom mesecu ste rodjeni?</label><br>
+                        <input type="text" id="pitanje9b" placeholder="01"><br>
+                        <label for="pitanje9c">Kog dana ste rodjeni?</label><br>
+                        <input type="text" id="pitanje9c" placeholder="01"><br><br>
+                        <input type="button" value="Izracunaj" id="posalji9" class="btn btn-primary">
+                        <p id="odgovor9"></p>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 10</legend>
+                    <div id="zadatak10">
+                        <label for="pitanje9">Kilobajti</label><br>
+                        <input type="text" id="pitanje10">
+                        <input type="button" value="Izracunaj u MB" id="posalji10" class="btn btn-primary">
+                        <p id="odgovor10"></p>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 11</legend>
+                    <div id="zadatak11">
+                        <label for="pitanje11a">Broj</label><br>
+                        <input type="text" id="pitanje11a"><br>
+                        <label for="pitanje11b">Na koji stepen</label><br>
+                        <input type="text" id="pitanje11b"><br><br>
+                        <input type="button" value="Izracunaj" id="posalji11" class="btn btn-primary">
+                        <p id="odgovor11"></p>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 13</legend>
+                    <div id="zadatak13">
+                        <label for="pitanje13">Da li je deljiv sa 7?</label><br>
+                        <input type="text" id="pitanje13"><br><br>
+                        <input type="button" value="Izracunaj" id="posalji13" class="btn btn-primary">
+                        <p id="odgovor13"></p>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>Zadatak 14</legend>
+                    <div id="zadatak14">
+                        <label for="pitanje14a">Broj</label><br>
+                        <input type="text" id="pitanje14a"><br>
+                        <label for="pitanje14b">Pomnozi sa</label><br>
+                        <input type="text" id="pitanje14b"><br><br>
+                        <input type="button" value="Izracunaj" id="posalji14" class="btn btn-primary">
+                        <p id="odgovor14"></p>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <script>
+        //Zadatak 1
+        function veciBroj(a, b) {
+            if (a > b) {
+                return a
+            } else {
+                return b
+            }
+        };
+        //Zadatak 2
+        function manjiBroj(a, b) {
+            if (a > b) {
+                return b
+            } else {
+                return a
+            }
+        };
+        //Zadatak 3
+        document.getElementById("posalji3").addEventListener('click', function () {
+            var poluprecnik = document.getElementById("pitanje3").value;
+            var obimKruga = (2 * poluprecnik) * Math.PI;
+            document.getElementById("odgovor3").innerHTML = obimKruga;
+        });
+        //Zadatak 4
+        document.getElementById("posalji4").addEventListener('click', function () {
+            var dinari = document.getElementById("pitanje4").value;
+            var euri = dinari / 117.86;
+            var euri1 = euri.toFixed(2);
+            document.getElementById("odgovor4").innerHTML = euri1 + ' eura';
+        });
+        //Zadatak 5
+        document.getElementById("posalji5").addEventListener('click', function () {
+            var dinari = document.getElementById("pitanje5").value;
+            var dinari = dinari * 118.57;
+            var dinari1 = dinari.toFixed(2);
+            document.getElementById("odgovor5").innerHTML = dinari1 + ' dinara';
+        });
+        //Zadatak 6
+        var datum = new Date();
+        var sat = datum.getHours();
+        if (sat < 12) {
+            document.getElementById("odgovor6").innerHTML = "Dobro jutro";
+        } else if (sat < 18) {
+            document.getElementById("odgovor6").innerHTML = "Dobar dan";
+        } else {
+            document.getElementById("odgovor6").innerHTML = "Dobro vece";
+        };
+        //Zadatak 7
+        document.getElementById("posalji7").addEventListener('click', function () {
+            var godinaRodjenja = document.getElementById("pitanje7").value;
+            var godina = 2018 - godinaRodjenja;
+            document.getElementById("odgovor7").innerHTML = 'Vi imate ' + godina + ' godina.';
+        });
+        //Zadatak 8
+        document.getElementById("posalji8").addEventListener('click', function () {
+            var godina = document.getElementById("pitanje8").value;
+            var godinaRodjenja = 2018 - godina;
+            document.getElementById("odgovor8").innerHTML = 'Vi ste rodjeni ' + godinaRodjenja + ' godine.';
+        });
+        //Zadatak 9
+        document.getElementById("posalji9").addEventListener('click', function () {
+            var year = document.getElementById("pitanje9a").value;
+            var month = document.getElementById("pitanje9b").value;
+            var day = document.getElementById("pitanje9c").value;
+            var date1 = new Date();
+            var date1_ms = date1.getTime();
+            var birthday = new Date(year, (month - 1), day);
+            var birthday_ms = birthday.getTime();
+            var dani = Math.floor((date1_ms - birthday_ms) / 1000 / 60 / 60 / 24);
+            document.getElementById("odgovor9").innerHTML = 'Vi ste stari ' + dani + ' dana.';
+        });
+
+        //Zadatak 10
+        document.getElementById("posalji10").addEventListener('click', function () {
+            var kilobajti = document.getElementById("pitanje10").value;
+            var megabajti = kilobajti / 1024;
+            if (megabajti <= 1) {
+                document.getElementById("odgovor10").innerHTML = megabajti + ' megabajt';
+            } else {
+                document.getElementById("odgovor10").innerHTML = megabajti + ' megabajta';
+            }
+        });
+        // function KilobatiuMb(kb) {
+        //     return Math.floor(kb / 1024);
+        // }
+
+        //Zadatak 11
+        document.getElementById("posalji11").addEventListener('click', function () {
+            var rezultat = 1;
+            var a = document.getElementById("pitanje11a").value;
+            var b = document.getElementById("pitanje11b").value;
+            for (i = 0; i < b; i++) {
+                rezultat *= a;
+            }
+            document.getElementById("odgovor11").innerHTML = rezultat;
+        });
+        // function stepenovanje(a, pow) {
+        //     var rezultat = 1;
+        //     for (i = 0; i < pow; i++) {
+        //         rezultat *= a;
+        //     }
+        //     return rezultat;
+        // }
+
+        //Zadatak 12
+
+
+
+        //Zadatak 13
+        // document.getElementById("posalji13").addEventListener('click', function () {
+        //     var broj = document.getElementById("pitanje13").value;
+        //     for (i = 0; i < broj; i += 7) {
+        //         if (i === broj) {
+        //             document.getElementById("odgovor13").innerHTML = "Deljiv sa 7";
+        //         } else {
+        //             document.getElementById("odgovor13").innerHTML = "Nije deljiv sa 7";
+        //         }
+        //     } console.log (i)
+
+        // });
+
+        function deljivSaSedam(br) {
+            for (i = 0; i <= br; i += 7) {
+                if (i === br) return "Deljiv sa 7!";
+            }
+            return "Nedeljiv sa 7!";
+        }
+
+        //Zadatak 14
+        document.getElementById("posalji14").addEventListener('click', function () {
+            var rezultat = 0;
+            var a = document.getElementById("pitanje14a").value;
+            var b = document.getElementById("pitanje14b").value;
+            for (i = 0; i < b; i++) {
+                rezultat += +a;
+            }
+            document.getElementById("odgovor14").innerHTML = rezultat;
+        });
+        // function mnozenje(a, b) {
+        //     var rezultat = 0;
+        //     for (i = 0; i < b; i++) {
+        //         rezultat += a;
+        //     }
+        //     return rezultat;
+        // }
+
+    </script>
+</body>
+
+</html>
