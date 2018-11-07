@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <title>Dokumentacija BOM</title>
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: lightblue;
+        }
+
+        .container {
+            border: 1px solid black;
+            box-shadow: 5px 5px 5px black;
+            margin-top: 25px;
+            padding: 25px;
+            background: lightgray;
+
+        }
+
+        h2 {
+            text-align: center;
+            padding-top: 25px;
+        }
+
+        h3 {
+            padding-top: 25px;
+        }
+
+        .prezentacija {
+            padding: 15px;
+        }
+        input {
+            padding: 5px !important;
+            margin-right: 10px; 
+        }
+    </style>
+</head>
+
+<body>
+    <div id="event_atributi" class="container">
+        <h2>
+            Event atributi
+        </h2>
+        <p>
+            Event-i ili dogadjaji su pojave koje su rezultat necega sto korisnik uradi.Mogu se pozivati <strong>inline</strong>
+            (kao
+            HTML atribut se dobija tako što se uz naziv dogadjaja dodaje prefiks “on” tj. on{eventtype}), preko <strong>addEventListener-a.</strong>
+        </p>
+        <p>
+            <h3>Inline koriscenje za "onclick" event</h3>
+            <div class="prezentacija" onclick="alert('pojavice se alert');"><strong>Pritisni na ovaj tekst i ...</strong></div>
+            <p>Ovo smo dobili tako sto smo na div dodali inline event (onclick):</p>
+        </p>
+        <code>
+            &lt;div class="prezentacija" onclick="alert('pojavice se alert');"&gt;Pritisni na ovaj tekst i ...&lt;/div&gt;
+        </code>
+        <p>
+            <h3>preko "addEventListener"-a za "onclick" event</h3>
+            <div class="prezentacija" id="onclick"><strong>Pritisni na ovaj tekst i promeni cu boju fonta i pozadinu</strong></div>
+            <p>Ovo smo dobili tako sto smo na div dodali id=onclick i posle ga pozvali preko funkcije:</p>
+
+        </p>
+        <code>
+            &lt;div id="onclick"&gt;Pritisni na ovaj tekst i promeni cu boju fonta&lt;/div&gt;<br><br>
+            &lt;script&gt;<br>
+            &nbsp;&nbsp;var onclickDiv = document.getElementById("onclick");<br>
+            &nbsp;&nbsp;onclickDiv.addEventListener('click', function () {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.color = 'yellow';<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.backgroundColor = 'blue';<br>
+            &nbsp;&nbsp;})<br>
+            &lt;/script&gt;
+        </code>
+        <br>
+        <br>
+        <p>
+            Ostale primere cemo raditi preko <strong> addEventListener-a.</strong> jer je najprihvaćeniji način
+            registrovanja dogadjaja i omogućava registrovanje više dogadjaja na jednom elementu.
+        </p>
+        <p>
+            <h3>"onblur" event</h3>
+            <input type="text" class="prezentacija" id="onblur">Kad napisemo tekst i izadjemo iz polja promenice se
+            bojafonta,pozadina i sva slova ce biti velika
+        </p>
+        <code>
+                &lt;input id="onblur"&gt;Kad napisemo tekst i izadjemo iz polja promenic se boja fonta,
+                pozadina i sva slova ce biti velika.
+            <br>
+                &lt;script&gt;<br>
+                &nbsp;&nbsp;var onblur = document.getElementById("onblur");<br>
+                &nbsp;&nbsp;onblur.addEventListener('blur', function () {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.color = 'yellow';<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.backgroundColor = 'blue';<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onblur.value = onblur.value.toUpperCase();<br>
+                &nbsp;&nbsp;})<br>
+                &lt;/script&gt;
+        </code>
+        <br>
+        <p>
+            <h3>"onfocus" event</h3>
+            <input type="text" class="prezentacija" id="onfocus">Kad pisemo tekst promenice se boja
+            fonta i pozadina.
+        </p>
+        <code>
+                    &lt;input id="onfocus"&gt;Kad pisemo tekst promenice se boja
+                    fonta i pozadina.
+                <br>
+                    &lt;script&gt;<br>
+                    &nbsp;&nbsp;var onfocus = document.getElementById("onfocus");<br>
+                    &nbsp;&nbsp;onfocus.addEventListener('focus', function () {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.color = 'white';<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.backgroundColor = 'red';<br>
+                    &nbsp;&nbsp;})<br>
+                    &lt;/script&gt;
+            </code>
+    </div>
+    <div class="container">
+
+    </div>
+
+    <script>
+        var onclickDiv = document.getElementById("onclick");
+        onclickDiv.addEventListener('click', function () {
+            this.style.color = 'yellow';
+            this.style.backgroundColor = 'blue';
+        })
+        var onblur = document.getElementById("onblur");
+        onblur.addEventListener('blur', function () {
+            this.style.color = 'yellow';
+            this.style.backgroundColor = 'red';
+            onblur.value = onblur.value.toUpperCase();
+        })
+        var onfocus = document.getElementById("onfocus");
+        onfocus.addEventListener('focus', function () {
+            this.style.color = 'white';
+            this.style.backgroundColor = 'red';
+        })
+    </script>
+</body>
+
+</html>
