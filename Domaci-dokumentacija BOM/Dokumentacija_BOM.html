@@ -22,18 +22,22 @@
             border: 1px solid black;
             box-shadow: 5px 5px 5px black;
             margin-top: 25px;
-            padding: 25px;
+            padding: 35px;
             background: lightgray;
 
         }
 
-        h2 {
+        h3 {
             text-align: center;
             padding-top: 25px;
+            font-weight: 700;
+            font-size: 35px;
         }
 
-        h3 {
-            padding-top: 25px;
+        h4 {
+            padding-top: 30px;
+            font-size: 25px;
+            text-decoration: underline;
         }
 
         .prezentacija {
@@ -42,35 +46,63 @@
         input {
             padding: 5px !important;
             margin-right: 10px; 
+            margin-left: 5px;
+            width: 100px;
+
+        }
+        .prikazRezultata {
+            border: 1px solid black;
+            margin: 15px 5px;
+            width: 175px;
+            height: 25px;
+            text-align: center;
+        }
+        
+        .prikazRezultata1 {
+            border: 1px solid black;
+            margin: 15px 5px;
+            width: 175px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .prikazRezultata2 {
+            border: 1px solid black;
+            margin: 15px 5px;
+            width: 300px;
+            height: 100px;
+            text-align: center;
+        }
+
+        label {
+            margin-left: 5px;
+        }
+
+        button {
+            margin-left: 5px;
         }
     </style>
 </head>
 
 <body>
     <div id="event_atributi" class="container">
-        <h2>
-            Event atributi
-        </h2>
-        <p>
-            Event-i ili dogadjaji su pojave koje su rezultat necega sto korisnik uradi.Mogu se pozivati <strong>inline</strong>
-            (kao
-            HTML atribut se dobija tako što se uz naziv dogadjaja dodaje prefiks “on” tj. on{eventtype}), preko <strong>addEventListener-a.</strong>
-        </p>
-        <p>
-            <h3>Inline koriscenje za "onclick" event</h3>
+        <h3>1. Event atributi</h2>
+            <p>
+                Event-i ili dogadjaji su pojave koje su rezultat necega sto korisnik uradi.Mogu se pozivati <strong>inline</strong>
+                (kao
+                HTML atribut se dobija tako što se uz naziv dogadjaja dodaje prefiks “on” tj. on{eventtype}), preko
+                <strong>addEventListener-a.</strong>
+            </p>
+            <h4>Inline koriscenje za "onclick" event</h4>
             <div class="prezentacija" onclick="alert('pojavice se alert');"><strong>Pritisni na ovaj tekst i ...</strong></div>
             <p>Ovo smo dobili tako sto smo na div dodali inline event (onclick):</p>
-        </p>
-        <code>
+            <code>
             &lt;div class="prezentacija" onclick="alert('pojavice se alert');"&gt;Pritisni na ovaj tekst i ...&lt;/div&gt;
         </code>
-        <p>
-            <h3>preko "addEventListener"-a za "onclick" event</h3>
+            <h4>preko "addEventListener"-a za "onclick" event</h4>
             <div class="prezentacija" id="onclick"><strong>Pritisni na ovaj tekst i promeni cu boju fonta i pozadinu</strong></div>
             <p>Ovo smo dobili tako sto smo na div dodali id=onclick i posle ga pozvali preko funkcije:</p>
-
-        </p>
-        <code>
+            <code>
             &lt;div id="onclick"&gt;Pritisni na ovaj tekst i promeni cu boju fonta&lt;/div&gt;<br><br>
             &lt;script&gt;<br>
             &nbsp;&nbsp;var onclickDiv = document.getElementById("onclick");<br>
@@ -80,18 +112,17 @@
             &nbsp;&nbsp;})<br>
             &lt;/script&gt;
         </code>
-        <br>
-        <br>
-        <p>
-            Ostale primere cemo raditi preko <strong> addEventListener-a.</strong> jer je najprihvaćeniji način
-            registrovanja dogadjaja i omogućava registrovanje više dogadjaja na jednom elementu.
-        </p>
-        <p>
-            <h3>"onblur" event</h3>
-            <input type="text" class="prezentacija" id="onblur">Kad napisemo tekst i izadjemo iz polja promenice se
-            bojafonta,pozadina i sva slova ce biti velika
-        </p>
-        <code>
+            <br>
+            <br>
+            <p>
+                Ostale primere cemo raditi preko <strong> addEventListener-a</strong> jer je najprihvaćeniji način
+                registrovanja dogadjaja i omogućava registrovanje više dogadjaja na jednom elementu.
+            </p>
+            <h4>"onblur" event</h4>
+            <input type="text" class="prezentacija" id="onblur"><br>
+            <p>Kad napisemo tekst i izadjemo iz polja promenice sebojafonta,pozadina i sva slova ce biti velika.</p>
+            <p>Ovo smo dobili tako sto smo na input tag dodali id=onblur i posle ga pozvali preko funkcije:</p>
+            <code>
                 &lt;input id="onblur"&gt;Kad napisemo tekst i izadjemo iz polja promenic se boja fonta,
                 pozadina i sva slova ce biti velika.
             <br>
@@ -104,46 +135,1150 @@
                 &nbsp;&nbsp;})<br>
                 &lt;/script&gt;
         </code>
-        <br>
-        <p>
-            <h3>"onfocus" event</h3>
-            <input type="text" class="prezentacija" id="onfocus">Kad pisemo tekst promenice se boja
+            <br>
+            <h4>"onfocus" event</h4>
+            <input type="text" class="prezentacija" id="onfocus">
+            <p>Kad pisemo tekst promenice se boja fonta i pozadina.</p>
+            <p>Ovo smo dobili tako sto smo na input tag dodali id=onfocus i posle ga pozvali preko funkcije:</p>
+            <code>
+            &lt;input id="onfocus"&gt;Kad pisemo tekst promenice se boja
             fonta i pozadina.
-        </p>
+            <br>
+            &lt;script&gt;<br>
+            &nbsp;&nbsp;var onfocus = document.getElementById("onfocus");<br>
+            &nbsp;&nbsp;onfocus.addEventListener('focus', function () {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.color = 'white';<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.backgroundColor = 'red';<br>
+            &nbsp;&nbsp;})<br>
+            &lt;/script&gt;
+        </code>
+            <h4>"oncontextmenu" event</h4>
+            <div class="prezentacija" id="oncontextmenu">Pritisni desnim klikom misa na tekst promenicu boju fonta</div><br>
+            <p>Ovo smo dobili tako sto smo na div dodali id=oncontextmenu i posle ga pozvali preko funkcije:</p>
+            <code>
+            &lt;div id="oncontextmenu"&gt;Pritisni desnim klikom misa na tekst promenicu boju fonta&lt;/div&gt;
+            <br>
+            &lt;script&gt;<br>
+            &nbsp;&nbsp;var oncontextmenu = document.getElementById("oncontextmenu");<br>
+            &nbsp;&nbsp;oncontextmenu.addEventListener('contextmenu', function () {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.color = 'yellow';<br>
+            &nbsp;&nbsp;})<br>
+            &lt;/script&gt;
+        </code>
+    </div>
+    <div id="set_Interval" class="container">
+        <h3>2. "Window setInterval() Method"</h3>
+        <p>Metoda setInterval() objekta "Window" sluzi da se prosledjena funkcija posle nekog vremena pokrene.</p>
+        <div id="setInterval" class="prezentacija">Pritisni na tekst i promenicu boju posle 2 sekunde</div><br>
+        <p>Ovo smo dobili tako sto smo na div dodali id=setInterval i posle ga pozvali preko funkcije i kasnije u
+            setInterval-u stavili 2000ms:</p>
         <code>
-                    &lt;input id="onfocus"&gt;Kad pisemo tekst promenice se boja
-                    fonta i pozadina.
-                <br>
-                    &lt;script&gt;<br>
-                    &nbsp;&nbsp;var onfocus = document.getElementById("onfocus");<br>
-                    &nbsp;&nbsp;onfocus.addEventListener('focus', function () {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.color = 'white';<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.style.backgroundColor = 'red';<br>
-                    &nbsp;&nbsp;})<br>
-                    &lt;/script&gt;
+            &lt;div id="setInterval"&gt;Pritisni na tekst i promenicu boju posle 2 sekunde&lt;/div&gt;
+            <br>
+            &lt;script&gt;<br>
+            &nbsp;&nbsp;var interval = document.getElementById("setInterval");<br>
+            &nbsp;&nbsp;interval.addEventListener('click', function () {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setInterval(function () {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interval.style.color = 'yellow';<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},2000);<br>
+            &nbsp;&nbsp;});<br>
+            &lt;/script&gt;
+        </code>
+    </div>
+    <div id="storage" class="container">
+        <h3>3. localStorage metode</h3><br>
+        <p>localStorage sluzi da u njemu skladistimo podatke vezano za sajt koji ce ostati u memoriji i nakon
+            zatvaranja browser-a</p>
+        <!-- dodati koje metode postoje -->
+        <input type="text" id="ubacivanjePodataka">
+        <button id="dugmeUbacivanje">Ubaci u memoriju</button><br><br>
+        <button id="dugmeIzvlacenje">Prikazi memoriju</button>
+        <p id="izvlacenjePodataka" class="prikazRezultata"></p>
+        <button id="brisiMemoriju">Izbrisi memoriju</button>
+        <br>
+        <br>
+        <p>Ovo iznad smo dobili na sledeci nacin:</p>
+        <code>
+        &lt;input type="text" id="ubacivanjePodataka"&gt;<br>
+        &lt;button id="dugmeUbacivanje"&gt;Ubaci u memoriju&lt;/button&gt;<br>
+        &lt;button  id="dugmeIzvlacenje"&gt;Prikazi memoriju&lt;/button&gt;<br>
+        &lt;p id="izvlacenjePodataka"&gt;&lt;/p&gt;<br>
+        &lt;button  id="brisiMemoriju"&gt;Izbrisi memoriju&lt;/button&gt;<br><br>
+        &lt;script&gt;<br>br
+        document.getElementById("dugmeUbacivanje").addEventListener('click', function (e) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;var vrednost = document.getElementById("ubacivanjePodataka").value;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;localStorage.setItem("ime", vrednost);<br>
+        });<br>
+        document.getElementById("dugmeUbacivanje").addEventListener('click', function (e) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("izvlacenjePodataka").innerHTML = localStorage.getItem("ime");<br>
+        });<br>
+        document.getElementById("dugmeUbacivanje").addEventListener('click', function (e) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;localStorage.removeItem("ime");<br>
+        });<br>
+        &lt;/script&gt;
+        </code>
+    </div>
+
+    <div id="storage" class="container">
+        <h3>4. sessionStorage metode</h3><br>
+        <p>sessionStorage sluzi da u njemu skladistimo podatke vezano za sajti i nakon zatvaranja browser-a podaci se
+            brisu iz memorije</p>
+        <!-- dodati koje metode postoje -->
+        <input type="text" id="ubacivanjePodataka1">
+        <button id="dugmeUbacivanje1">Ubaci u memoriju</button><br><br>
+        <button id="dugmeIzvlacenje1">Prikazi memoriju</button>
+        <p id="izvlacenjePodataka1" class="prikazRezultata"></p>
+        <button id="brisiMemoriju1">Izbrisi memoriju</button>
+        <br>
+        <br>
+        <p>Ovo iznad smo dobili na sledeci nacin:</p>
+        <code>
+            &lt;input type="text" id="ubacivanjePodataka1"&gt;<br>
+            &lt;button id="dugmeUbacivanje1"&gt;Ubaci u memoriju&lt;/button&gt;<br>
+            &lt;button  id="dugmeIzvlacenje1"&gt;Prikazi memoriju&lt;/button&gt;<br>
+            &lt;p id="izvlacenjePodataka1"&gt;&lt;/p&gt;<br>
+            &lt;button  id="brisiMemoriju1"&gt;Izbrisi memoriju&lt;/button&gt;<br><br>
+            &lt;script&gt;<br>br
+            document.getElementById("dugmeUbacivanje1").addEventListener('click', function (e) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;var vrednost = document.getElementById("ubacivanjePodataka1").value;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;sessionStorage.setItem("ime1", vrednost);<br>
+            });<br>
+            document.getElementById("dugmeUbacivanje1").addEventListener('click', function (e) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("izvlacenjePodataka").innerHTML = sessionStorage.getItem("ime1");<br>
+            });<br>
+            document.getElementById("dugmeUbacivanje1").addEventListener('click', function (e) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;sessionStorage.removeItem("ime1");<br>
+            });<br>
+            &lt;/script&gt;
             </code>
     </div>
-    <div class="container">
 
+
+    <div id="promenljive" class="container">
+        <h3>5. Promenljive i opseg vazenja promenljivih</h3>
+        <br>
+        <p>Promenljive koristimo da ne bismo istu vrednost pisali više puta, kao i da bismo mogli da pratimo o kom
+            objektu se radi čak i kad mu se vrednost promeni.Promenljiva definisana sa var iznad tela funkcije (zovemo
+            i globalna promenljiva) biće
+            dostupna i u funkciji, promenljiva definisana unutar funkcije (zovemo lokalna promenljiva) neće biti
+            dostupna van funkcije.
+        </p>
+
+    </div>
+
+    <div id="razlikaJsonIJs" class="container">
+        <h3>7. Razlika izmedju JSON-a i javaScript-a</h3>
+
+    </div>
+
+    <div id="windowObjekat" class="container">
+        <h3>8. Window objekat</h3>
+        <p>Window objekat je najviše rangirani objekat (glavni objekti su: <a href="#navigatorObjekat">"navigator"</a>,
+            <a href="#historyObjekat">"history"</a>, <a href="#screenObjekat">"screen"</a>, <a href="#locationObjekat">"location"</a>
+            i <a href="#documentObjekat">"document"</a>) i predstavlja prozor pretraživač<a href="" class="br"></a>.
+            <br> Sve objekte i svojstva koja se nalaze u okviru window objekta možemo pozivati sa window. ispred ali će
+            oni biti dostupni
+            i bez toga pa reč window. možemo izostaviti. <br> Sve objekte, promenljive, funkcije koje mi napišemo ako
+            nismo definisali kom
+            objektu pripadaju oni će biti deo window objekta
+        </p>
+        <p>Osim navedenih 5 glavnih objekata u okviru window objekta postoji još dosta svojstava window objekta koja se
+            u njemu nalaze, neki od njih:</p>
+
+        <h4>window.innerWidth</h4>
+        <p>Svojstvo window.innerWidth vraca sirinu prozora bez scrollbara i toolbara. Svojstvo se pise na sledeci
+            nacin:<br>
+            <code>window.innerWidth;</code></p>
+        <button id="dugmeWindowInnerWidth">Prikazi sirinu prozora</button>
+        <div id="prikaziWindowInnerWidth" class="prikazRezultata"></div>
+
+        <h4>window.innerHeight</h4>
+        <p>Svojstvo window.innerHeight vraca visinu prozora bez scrollbara i toolbara. Svojstvo se pise na sledeci
+            nacin:<br>
+            <code>window.innerWidth;</code></p>
+        <button id="dugmeWindowInnerHeight">Prikazi visinu prozora</button>
+        <div id="prikaziWindowInnerHeight" class="prikazRezultata"></div>
+
+        <h4>window.pageXOffset</h4>
+        <p>Svojstvo window.pageXOffset vraca koliko je prozor odskrolovan vodoravno. Svojstvo se pise na sledeci nacin:<br>
+            <code>window.pageXOffset;</code></p>
+        <button id="dugmeWindowPageXOffset">Prikazi</button>
+        <div id="prikaziWindowPageXOffset" class="prikazRezultata"></div>
+
+        <h4>window.pageYOffset</h4>
+        <p>Svojstvo window.pageYOffset vraca koliko je prozor odskrolovan vertikalno. Svojstvo se pise na sledeci
+            nacin:<br>
+            <code>window.pageYOffset;</code></p>
+        <button id="dugmeWindowPageYOffset">Prikazi</button>
+        <div id="prikaziWindowPageYOffset" class="prikazRezultata"></div>
+
+        <h4>window.screenX</h4>
+        <p>Svojstvo window.screenX vraca pozicija prozora u odnosu na ekran (horizontalno). Svojstvo se pise na sledeci
+            nacin:<br>
+            <code>window.screenX;</code></p>
+        <button id="dugmeWindowScreenX">Prikazi</button>
+        <div id="prikaziWindowScreenX" class="prikazRezultata"></div>
+
+        <h4>window.screenY</h4>
+        <p>Svojstvo window.screenY vraca pozicija prozora u odnosu na ekran (vertikalno). Svojstvo se pise na sledeci
+            nacin:<br>
+            <code>window.screenY;</code></p>
+        <button id="dugmeWindowScreenY">Prikazi</button>
+        <div id="prikaziWindowScreenY" class="prikazRezultata"></div>
+
+    </div>
+
+    <div id="navigatorObjekat" class="container">
+        <h3>9. Navigator objekat</h3>
+        <p>Navigator objekat sadrži informacije o korisnikovom browser-u. Objekat Navigator je nazvan po veb čitaču
+            Netscape Navigator, ali ga podržavaju i svi ostali čitači. Objekat window.navigator se može pisati bez
+            prefiksa window.</p>
+        <p>Svojstva "navigator" objekta:</p>
+
+        <h4>navigator.appCodeName</h4>
+        <p>Svojstvo navigator.appCodeName vraca ime pregledaca (browser-a). Svojstvo se pise na sledeci nacin:<br>
+            <code>window.navigator.appCodeName;</code></p>
+        <button id="dugmeNavigatorAppCodeName">Prikazi ime pregledaca</button>
+        <div id="prikaziNavigatorAppCodeName" class="prikazRezultata"></div>
+
+        <h4>navigator.platform</h4>
+        <p>Svojstvo navigator.platform vraca operativni sistem pregledaca. Svojstvo se pise na sledeci nacin:<br>
+            <code>window.navigator.platform;</code></p>
+        <button id="dugmeNavigatorPlatform">Prikazi OS pregledaca</button>
+        <div id="prikaziNavigatorPlatform" class="prikazRezultata"></div>
+
+        <h4>navigator.userAgent</h4>
+        <p>Svojstvo navigator.userAgent vraca string koji citac upisuje u zaglavlje USER-AGENT HTTP. Ovo svojstvo
+            obicno sadrzi sve informacije iz svojstava appName i appVersion, a cesto i dodatne detalje. Svojstvo se
+            pise na sledeci nacin:<br>
+            <code>window.navigator.userAgent;</code></p>
+        <button id="dugmeNavigatorUserAgent">Prikazi userAgent</button>
+        <div id="prikaziNavigatorUserAgent" class="prikazRezultata2"></div>
+
+        <h4>navigator.onLine</h4>
+        <p>Svojstvo navigator.onLine prikazuje da li je pregledac (browser) online. Svojstvo se pise na sledeci nacin:<br>
+            <code>window.navigator.onLine;</code></p>
+        <button id="dugmeNavigatorOnLine">Prikazi status pregledaca</button>
+        <div id="prikaziNavigatorOnLine" class="prikazRezultata"></div>
+
+        <h4>navigator.javaEnabled( )</h4>
+        <p>Svojstvo navigator.javaEnabled ( ) prikazuje da li je Java ukljucena u pregledacu. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>window.navigator.javaEnabled( );</code></p>
+        <button id="dugmeNavigatorJavaEnabled">Prikazi status jave</button>
+        <div id="prikaziNavigatorJavaEnabled" class="prikazRezultata"></div>
+    </div>
+
+    <div id="historyObjekat" class="container">
+        <h3>10. History objekat</h3>
+        <br>
+        <p>History objekat čuva informacije o URL adresama koje su prethodno bile posećene i o adresama koje su
+            posećene nakon posete trenutnoj stranici, a u sebi sadrži metode za kretanje.</p>
+        <h4>history.length</h4>
+        <p>Length predstavlja svostvo History objekta i prikazuje broj URL-a koji se nalaze u istoriji. Svojstvo se
+            pise na sledeci nacin:<br>
+            <code>var d = new Date ( );<br>
+            d.getDay( );</code></p>
+        <button id="dugmeHistoryLength">Prikazi istoriju URL-a</button>
+        <div id="rezultatHistoryLength" class="prikazRezultata "></div>
+        <br>
+        <p>Objekat History podržava tri metode:</p>
+
+        <h4>history.back( )</h4>
+        <p>Pomoću metode history.back( ) moguće je kretanje unazad u istoriji pregledanja, pri čemu se
+            tekući dokument zamenjuje prethodno pregledanim dokumentom. Metoda
+            se pise na sledeci nacin: <br>
+            <code>history.back( );</code><br></p>
+        <button id="dugmeHistoryBack">Vrati se nazad</button>
+
+        <h4>history.forward( )</h4>
+        <p>Pomoću metode history.forward( ) moguće je kretanje unapred u istoriji pregledanja, pri čemu se tekući
+            dokument zamenjuje prethodno pregledanim dokumentom. Metoda se pise na sledeci nacin: <br>
+            <code>window.history.forward( );</code><br></p>
+        <button id="dugmeHistoryForward">Idi napred</button>
+
+        <h4>history.go( )</h4>
+        <p>Мetoda history.go( ) ima celobrojni argument i može da preskoči proizvoljan broj strana ispred ili iza
+            tekuće strane,
+            u zavisnosti da li je argument pozitivan ili negativan, u istoriji veb čitača. Metoda se pise na sledeci
+            nacin: <br>
+            <code>window.history.go(argument);</code><br></p>
+        <button id="dugmeHistoryGo">Idi nazad za jedan korak</button>
+    </div>
+
+    <div id="screenObjekat" class="container">
+        <h3>11. Screen objekat</h3>
+        <p>Screen objekat čuva podatke o ekranu klijenta. Objekat window.screen se može pisati bez prefiksa window</p>
+        <p>Svojstva "screen" objekta:</p>
+
+        <h4>screen.width</h4>
+        <p>Svojstvo width vraca dostupnu sirinu ekrana u pikselima. Svojstvo se pise na sledeci nacin:<br>
+            <code>screen.width;</code></p>
+        <button id="dugmeScreenWidth">Prikazi dostupnu sirinu ekrana</button>
+        <div id="prikaziScreenWidth" class="prikazRezultata"></div>
+
+        <h4>screen.height</h4>
+        <p>Svojstvo height vraca dostupnu visinu ekrana u pikselima. Svojstvo se pise na sledeci nacin:<br>
+            <code>screen.height;</code></p>
+        <button id="dugmeScreenHeight">Prikazi dostupnu visinu ekrana</button>
+        <div id="prikaziScreenHeight" class="prikazRezultata"></div>
+
+        <h4>screen.availWidth</h4>
+        <p>Svojstvo availWidth vraca dostupnu sirinu ekrana u pikselima umanjena za delove interfejsa kao sto je
+            Taskbar. Svojstvo se pise na sledeci nacin:<br>
+            <code>screen.availWidth;</code></p>
+        <button id="dugmeScreenAvailWidth">Prikazi sirinu ekrana</button>
+        <div id="prikaziScreenAvailWidth" class="prikazRezultata"></div>
+
+        <h4>screen.availHeight</h4>
+        <p>Svojstvo availHeight vraca dostupnu visinu ekrana u pikselima umanjena za delove interfejsa kao sto je
+            Taskbar. Svojstvo se pise na sledeci nacin:<br>
+            <code>screen.availHeight;</code></p>
+        <button id="dugmeScreenAvailHeight">Prikazi visinu ekrana</button>
+        <div id="prikaziScreenAvailHeight" class="prikazRezultata"></div>
+
+        <h4>screen.colorDepth</h4>
+        <p>Svojstvo colorDepth prikazuje broj bitova za prikaz jedne boje (najčešće 32 ili 24) u bitovima po pixelu
+            (bpp). Metoda se pise na
+            sledeci nacin: <br>
+            <code>screen.colorDepth;</code></p>
+        <button id="dugmeScreenColorDepth">Prikazi dubinu boja</button>
+        <div id="prikaziScreenColorDepth" class="prikazRezultata"></div>
+
+        <h4>screen.pixelDepth</h4>
+        <p>Svojstvo pixelDepth prikazuje dubinu pixela ekrana u bitovima po pixelu (bpp). Metoda se pise na
+            sledeci nacin: <br>
+            <code>screen.pixelDepth;</code></p>
+        <button id="dugmeScreenPixelDepth">Prikazi dubinu pixela</button>
+        <div id="prikaziScreenPixelDepth" class="prikazRezultata"></div>
+    </div>
+
+    <div id="locationObjekat" class="container">
+        <h3>12. Location objekat</h3>
+        <p>Location objekat je deo Window objekta i predstavlja URL adresu dokumenta koji je trenutno prikazan u tom
+            prozoru.Objekat window.location se može pisati bez prefiksa window.</p>
+        <p>Svojstva "location" objekta:</p>
+
+        <h4>location.href</h4>
+        <p>Svojstvo location.href vraca href (URL) tekuće stranice. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>window.location.href;</code></p>
+        <button id="dugmeLocationHref">Prikazi href trenutne stranice</button>
+        <div id="prikaziLocationHref" class="prikazRezultata2"></div>
+
+        <h4>location.hostname</h4>
+        <p>Svojstvo location.hostname vraca ime domena trenutne stranice. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>window.location.hostname;</code></p>
+        <button id="dugmeLocationHostname">Prikazi ime domena</button>
+        <div id="prikaziLocationHostname" class="prikazRezultata1"></div>
+
+        <h4>location.pathname</h4>
+        <p>Svojstvo location.pathname vraca putanju (path) i ime datoteke tekuće stranicebr. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>window.location.pathname;</code></p>
+        <button id="dugmeLocationPathname">Prikazi putanju</button>
+        <div id="prikaziLocationPathname" class="prikazRezultata2"></div>
+
+        <h4>location.protocol</h4>
+        <p>Svojstvo location.protocol vraca web protokol koji se koristi (http:// ili https://). Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>window.location.protocol;</code></p>
+        <button id="dugmeLocationProtocol">Prikazi ime protokola</button>
+        <div id="prikaziLocationProtocol" class="prikazRezultata"></div>
+
+        <h4>location.hash</h4>
+        <p>Svojstvo location.hash vraca deo URL adrese od znaka # uključujući i znak #. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>window.location.hash;</code></p>
+        <button id="dugmeLocationHash">Prikazi hash</button>
+        <div id="prikaziLocationHash" class="prikazRezultata1"></div>
+
+        <h4>location.port</h4>
+        <p>Svojstvo location.port vraca broj porta tekućeg URL-a.<br>
+            <code>window.location.port;</code></p>
+        <button id="dugmeLocationPort">Prikazi port</button>
+        <div id="prikaziLocationPort" class="prikazRezultata1"></div>
+    </div>
+
+    <div id="documentObjekat" class="container">
+        <h3>13. Document objekat</h3>
+        <p>Document objekat je kontejner za HTML, on je koren svih drugih čvorova HTML dokumenta. Kada se otvori prazan
+            prozor u pretraživaču napravi se window objekat a nakon učitavanja HTML-a u prozor nastaje dokument objekat
+            (koji je inače property Window objekta).</p>
+        <p>Document write metode:</p>
+
+        <h4>document.write( ); </h4>
+        <p>Svojstvo document.write( ) ispisuje liniju teksta. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>document.write("tekst")</code></p>
+        <input type="text" id="ubacivanjeDocumentWrite">
+        <button id="dugmeDocumentWrite">Ispisi tekst</button>
+        <div id="prikaziDocumentWrite" class="prikazRezultata"></div>
+
+        <h4>document.writeln( ); </h4>
+        <p>Svojstvo document.writeln( ) ispisuje liniju teksta i dodaje karakter za novi red. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>document.writeln("tekst")</code></p>
+        <input type="text" id="ubacivanjeDocumentWriteIn">
+        <button id="dugmeDocumentWriteIn">Ispisi tekst</button>
+        <div id="prikaziDocumentWriteIn" class="prikazRezultata"></div>
+        <br>
+        <p>Osobine "document"-a:</p>
+
+        <h4>document.title;</h4>
+        <p>Svojstvo document.writeln( ) ispisuje liniju teksta i dodaje karakter za novi red. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>document.title = "Novi title stranice";</code></p>
+        <input type="text" id="ubacivanjeDocumentTitle">
+        <button id="dugmeDocumentTitle">Izmeni naslov stranice</button>
+
+        <h4>document.URL;</h4>
+        <p>Svojstvo document.URL se ponasa slicno ako ne isto kao location.href. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>document.URL;</code></p>
+        <button id="dugmeDocumentURL">Prikazi URL</button>
+        <div id="prikaziDocumentURL" class="prikazRezultata2"></div>
+
+        <h4>document.domain;</h4>
+        <p>Svojstvo document.domain vraca domen. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>document.domain;</code></p>
+        <button id="dugmeDocumentDomain">Prikazi domen</button>
+        <div id="prikaziDocumentDomain" class="prikazRezultata"></div>
+
+        <h4>document.referrer;</h4>
+        <p>Svojstvo document.referrer vraxa url sa kojeg je pozvan tekuxi dokument. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>document.referrer;</code></p>
+        <button id="dugmeDocumentReferrer">Prikazi URL</button>
+        <div id="prikaziDocumentReferrer" class="prikazRezultata1"></div>
+
+        <h4>document.lastModified;</h4>
+        <p>Svojstvo document.lastModified vraca lastModified vreme trenutnog dokumenta. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>document.lastModified;</code></p>
+        <button id="dugmeDocumentLastModified">Prikazi vreme poslednje izmene</button>
+        <div id="prikaziDocumentLastModified" class="prikazRezultata"></div>
+
+        <h4>document.inputEncoding;</h4>
+        <p>Svojstvo document.inputEncoding vraca encoding trenutnog dokumenta. Svojstvo se pise na
+            sledeci nacin:<br>
+            <code>document.inputEncoding;</code></p>
+        <button id="dugmeDocumentInputEncoding">Prikazi vreme poslednje izmene</button>
+        <div id="prikaziDocumentInputEncoding" class="prikazRezultata"></div>
+    </div>
+
+    <div id="documentObjekat1" class="container">
+        <h3>14. Metode i svojstva u okviru DOM-a koja nisu direktno u document</h3>
+        <br>
+
+
+
+    </div>
+
+    <div id="dateObjekat" class="container">
+        <h3>15. Date objekat</h3>
+        <br>
+        <p>Date predstavlja ugradjeni objekat pomoću koga možemo manipulisati datumskim, odnosno vremenskim, podacima
+            ili meriti vreme. Datumski objekat sadrži vremenski podatak koji uključuje datum i vreme do preciznosti od
+            jedne milisekunde (hiljaditi deo sekunde).</p>
+        <p>Metode "date" objekta:</p>
+
+        <h4>Date.now( )</h4>
+        <p>Prikazuje trenutni broj milisekundi od početnog datuma odnosno nulta milisekunda je 1. januar
+            1970. godine u 00:00:00, po univerzalnom vremenu (UTC, odnosno GMT - srednje vreme po Griniču). Metoda se
+            pise na sledeci nacin: <br>
+            <code>Date.now( );</code></p>
+        <button id="dugmeDate_now">Prikazi broj</button>
+        <div id="prikaziDate_now" class="prikazRezultata"></div>
+
+        <h4>new Date()</h4>
+        <p>Date objekat se pravi preko new Date() konstruktora i on predstavlja lokalno vreme koje je bilo na računaru
+            u trenutku kreiranja objekta. Metoda se pise na sledeci nacin: <br>
+            <code>new Date( );</code></p>
+        <button id="dugmeNewDate">Prikazi vreme</button>
+        <div id="prikaziNewDate" class="prikazRezultata1"></div>
+
+        <h4>.getFullYear()</h4>
+        <p>Prikazuje četvorocifrenu godinu. Metoda se pise na sledeci nacin: <br>
+            <code> var d = new Date ();<br>
+            d.getFullYear();</code></p>
+        <button id="dugmeFullYear">Prikazi trenutnu godinu</button>
+        <div id="prikaziFullYear" class="prikazRezultata"></div>
+
+        <h4>.getMonth()</h4>
+        <p>Prikazuje redni broj meseca (0-11). Metoda se pise na sledeci nacin: <br>
+            <code> var d = new Date ();<br>
+            d.getMonth();</code></p>
+        <button id="dugmeMonth">Prikazi trenutni mesec</button>
+        <div id="prikaziMonth" class="prikazRezultata"></div>
+
+        <h4>.getDate( )</h4>
+        <p>Prikazuje dan u mesecu (1-31). Metoda se pise na sledeci nacin: <br>
+            <code>var d = new Date ( );<br>
+            d.getDate( );</code></p>
+        <button id="dugmeDate">Prikazi trenutni dan</button>
+        <div id="prikaziDate" class="prikazRezultata"></div>
+
+        <h4>.getDay( )</h4>
+        <p>Prikazuje broj dana u nedelji (0-Nedelja,1-Ponedeljak,2-Utorak,3-Sreda,4-Cetvrtak,5-Petak,6-Subota). Metoda
+            se pise na sledeci nacin: <br>
+            <code> var d = new Date ( );<br>
+            d.getDay( );</code></p>
+        <button id="dugmeDay">Prikazi trenutni dan u nedelji</button>
+        <div id="prikaziDay" class="prikazRezultata"></div>
+
+        <h4>.getHours( )</h4>
+        <p>Prikazuje sat u formatu (0-23). Metoda se pise na sledeci nacin: <br>
+            <code>/code> var d = new Date ( );<br>
+            d.getHours( );</code></p>
+        <button id="dugmeHours">Prikazi sate</button>
+        <div id="prikaziHours" class="prikazRezultata"></div>
+
+        <h4>.getMinutes( )</h4>
+        <p>Prikazuje minute u formatu (0-59). Metoda se pise na sledeci nacin: <br>
+            <code>var d = new Date ( );<br>
+            d.getMinutes( );</code></p>
+        <button id="dugmeMinutes">Prikazi minute</button>
+        <div id="prikaziMinutes" class="prikazRezultata"></div>
+
+        <h4>.getSeconds( )</h4>
+        <p>Prikazuje sekunde u formatu (0-59). Metoda se pise na sledeci nacin: <br>
+            <code>var d = new Date ( );<br>
+            d.getSeconds( );</code></p>
+        <button id="dugmeSeconds">Prikazi sekunde</button>
+        <div id="prikaziSeconds" class="prikazRezultata"></div>
+
+        <h4>.getMilliseconds( )</h4>
+        <p>Prikazuje milisekunde u formatu (0-999). Metoda se pise na sledeci nacin: <br>
+            <code>var d = new Date ( );<br>
+            d.getMilliseconds( );</code></p>
+        <button id="dugmeMilliseconds">Prikazi milisekunde</button>
+        <div id="prikaziMilliseconds" class="prikazRezultata"></div>
+    </div>
+
+    <div id="stringMetode" class="container">
+        <h3>16. String metode</h3>
+        <br>
+        <p>Stringovi su tekstualne vrednosti u našem programu. Osim brojeva, oni su najvažniji tip podataka sa kojima
+            radimo. String literal je praktično konstanta koju možemo zadati u programu. Stringovi se mogu zadati
+            unutar navodnika ili unutar apostrofa.</p>
+        <p>Metode "string" objekta:</p>
+
+        <h4>.length</h4>
+        <p>Metoda "nesto".length vraca dužinu stringa izražena brojem znakova. Metoda se pise na sledeci nacin: <br>
+            <code>"nesto".length;</code></p>
+        <input type="text" id="duzinaStringa">
+        <button id="dugmeDuzinaStringa">Prikazi duzinu stringa</button>
+        <div id="prikaziDuzinaStringa" class="prikazRezultata"></div>
+
+        <h4>.charAt( )</h4>
+        <p>Metoda "nesto".charAt( ) vraca koji je karakter na poziciji koju prosledimo. Metoda se pise na sledeci
+            nacin: <br>
+            <code>"nesto".charAt(neki broj);</code></p>
+        <label for="CharAt">"Nesto"</label>
+        <input type="text" id="CharAt"><br>
+        <label for="CharAt1">neki broj</label>
+        <input type="text" id="CharAt1"><br><br>
+        <button id="dugmeCharAt">Prikazi karaktera na poziciji (neki broj):</button>
+        <div id="prikaziCharAt" class="prikazRezultata"></div>
+
+        <h4>.charCodeAt( )</h4>
+        <p>Metoda "nesto".charCodeAt( ) vraca koji Unicode kod karaktera na poziciji koju prosledimo. Metoda se pise na
+            sledeci
+            nacin:<br>
+            <code>"nesto".charCodeAt(neki broj);</code></p>
+        <label for="CharCodeAt">"Nesto"</label>
+        <input type="text" id="CharCodeAt"><br>
+        <label for="CharCodeAt1">neki broj</label>
+        <input type="text" id="CharCodeAt1"><br><br>
+        <button id="dugmeCharCodeAt">Prikazi unicode na poziciji (neki broj):</button>
+        <div id="prikaziCharCodeAt" class="prikazRezultata"></div>
+
+        <h4>.concat( )</h4>
+        <p>Metoda "nesto".concat( ) spaja 2 ili vise stringova koje prosledimo. Metoda se pise na sledeci
+            nacin:<br>
+            <code>"nesto".concat("i jos");</code></p>
+        <label for="Concat">"Nesto"</label>
+        <input type="text" id="Concat"><br>
+        <label for="Concat1">"i jos"</label>
+        <input type="text" id="Concat1"><br><br>
+        <button id="dugmeConcat">Spoji stringove:</button>
+        <div id="prikaziConcat" class="prikazRezultata"></div>
+
+        <h4>.repeat( )</h4>
+        <p>Metoda "nesto".repeat(parametar) ponavlja string onoliko puta koliko prosledimo u parametru. Metoda se pise
+            na sledeci
+            nacin:<br>
+            <code>"nesto".repeat(neki broj);</code></p>
+        <label for="Repeat">"Nesto"</label>
+        <input type="text" id="Repeat"><br>
+        <label for="Repeat1">neki broj</label>
+        <input type="text" id="Repeat1"><br><br>
+        <button id="dugmeRepeat">Ponovi string:</button>
+        <div id="prikaziRepeat" class="prikazRezultata"></div>
+
+        <h4>.slice( )</h4>
+        <p>Metoda "nesto".slice(parametar,parametar) vraca string izmedju prosledjenih pozicija.
+            Metoda se pise na sledeci
+            nacin:<br>
+            <code>"nesto".slice("od","do");</code></p>
+        <label for="Slice">"Nesto"</label>
+        <input type="text" id="Slice"><br>
+        <label for="Slice1">"od"</label>
+        <input type="text" id="Slice1"><br>
+        <label for="Slice2">"do"</label>
+        <input type="text" id="Slice2"><br>
+        <button id="dugmeSlice">Prikazi:</button>
+        <div id="prikaziSlice" class="prikazRezultata"></div>
+
+        <h4>.substring( )</h4>
+        <p>Metoda "nesto".substring(parametar,parametar) vraca string izmedju prosledjenih pozicija.
+            Metoda se pise na sledeci
+            nacin:<br>
+            <code>"nesto".substring("od","do");</code></p>
+        <label for="Substring">"Nesto"</label>
+        <input type="text" id="Substring"><br>
+        <label for="Substring1">"od"</label>
+        <input type="text" id="Substring1"><br>
+        <label for="Substring2">"do"</label>
+        <input type="text" id="Substring2"><br>
+        <button id="dugmeSubstring">Prikazi:</button>
+        <div id="prikaziSubstring" class="prikazRezultata"></div>
+
+        <h4>.substr( )</h4>
+        <p>Metoda "nesto".substr("od", "duzine") vraca string odredjene "dužine" karaktera a počinje "od" pozicije.
+            Metoda se pise na sledeci
+            nacin:<br>
+            <code>"nesto".substring(separator);</code></p>
+        <label for="Substr">"Nesto"</label>
+        <input type="text" id="Substr"><br>
+        <label for="Substr1">"od"</label>
+        <input type="text" id="Substr1"><br>
+        <label for="Substr2">"duzine"</label>
+        <input type="text" id="Substr2"><br>
+        <button id="dugmeSubstr">Prikazi string:</button>
+        <div id="prikaziSubstr" class="prikazRezultata"></div>
+
+        <h4>.toLowerCase( )</h4>
+        <p>Metoda "nesto".toLowerCase( ) konvertuje string u mala slova.
+            Metoda se pise na sledeci
+            nacin:<br>
+            <code>"nesto".toLowerCase( );</code></p>
+        <label for="ToLowerCase">"Nesto"</label>
+        <input type="text" id="ToLowerCase"><br><br>
+        <button id="dugmeToLowerCase">Konvertuje string:</button>
+        <div id="prikaziToLowerCase" class="prikazRezultata"></div>
+
+        <h4>.toUpperCase( )</h4>
+        <p>Metoda "nesto".toUpperCase( ) konvertuje string u velika slova.
+            Metoda se pise na sledeci
+            nacin:<br>
+            <code>"nesto".toUpperCase( );</code></p>
+        <label for="ToUpperCase">"Nesto"</label>
+        <input type="text" id="ToUpperCase"><br><br>
+        <button id="dugmeToUpperCase">Konvertuje string:</button>
+        <div id="prikaziToUpperCase" class="prikazRezultata"></div>
+
+        <h4>.trim( )</h4>
+        <p>Metoda "nesto".trim( ) brise razmake sa pocetka i kraja stringa.
+            Metoda se pise na sledeci
+            nacin:<br>
+            <code>"nesto".trim( );</code></p>
+        <label for="Trim">"Nesto"</label>
+        <input type="text" id="Trim"><br><br>
+        <button id="dugmeTrim">Ukloni razmake:</button>
+        <div id="prikaziTrim" class="prikazRezultata"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div id="nizoviMetode" class="container">
+        <h3>17. Metode za rad sa nizovima</h3>
+        <p>Niz je uređen skup vrednosti. Te vrednosti se nazivaju elementi niza. Svaki element niza ima svoju numerički
+            opisanu poziciju - indeks. Elementi niza mogu biti proizvoljnog tipa. Takođe, ne moraju svi elementi jednog
+            niza biti istog tipa. Najjednostavnije, niz se može deklarisati tako što se eksplicitno nabroje elementi
+            niza razdvojeni zarezima, unutar uglastih zagrada. </p>
+        <p>Metode za rad sa nizovima:</p>
+        
+
+    </div>
+
+    <div id="mathMetode" class="container">
+        <h3>18. Metode Math objekta</h3>
+        <br>
+        <p>Math predstavlja ugradjeni objekat koji je namenjen da olakša programiranje. Metode Math objekta uzimaju
+            broj kao atribut a vraćaju rezultat neke matematičke operacije nad tim brojem</p>
+        <p>Metode Math objekta:</p>
+
+        <h4>Math.PI</h4>
+        <p>Math.PI je svojstvo objekta Math i predstavlja odnos obima i poluprečnika kruga tj. matematicku konstantu
+            (π)</p>
+        <div id="prikaziPI" class="prikazRezultata "></div>
+        <button id="dugmePI">Prikazi PI (π)</button>
+
+        <h4>Math.pow( )</h4>
+        <p>Metod Math.pow( ) ima dva parametra - osnovu i eksponent, a kao rezultat vraća stepen zadatog broja - osnova
+            na eksponent. Metoda se pise na sledeci nacin: <br>
+            <code>Math.pow(osnova, eksponent);</code></p>
+        <input type="text" id="poljePow1">na
+        <input type="text" id="poljePow2">stepen <br><br>
+        <button id="dugmePow">Stepenuj</button>
+        <div id="prikaziPow" class="prikazRezultata "></div>
+
+        <h4>Math.random( )</h4>
+        <p>Metod Math.random( ) nema parametre, a kao rezultat vraća slučajan broj od 0.0000 do 0.9999. Metoda se pise
+            na sledeci nacin: <br>
+            <code>Math.random( );</code></p>
+        <button id="dugmeRandom">Prikazi random broj</button>
+        <div id="prikaziRandom" class="prikazRezultata "></div>
+
+        <h4>Math.ceil( )</h4>
+        <p>Metod Math.ceil( ) kao rezultat vraća prvi veći (ili jednaki) celi broj. Metoda se pise
+            na sledeci nacin: <br>
+            <code>Math.ceil(broj);</code></p>
+        <input type="text" id="poljeCeil">
+        <button id="dugmeCeil">Zaokruzi broj</button>
+        <div id="prikaziCeil" class="prikazRezultata "></div>
+
+        <h4>Math.floor( )</h4>
+        <p>Metod Math.floor( ) kao rezultat vraća prvi manji (ili jednaki) celi broj. Metoda se pise
+            na sledeci nacin: <br>
+            <code>Math.floor(broj);</code></p>
+        <input type="text" id="poljeFloor">
+        <button id="dugmeFloor">Zaokruzi broj</button>
+        <div id="prikaziFloor" class="prikazRezultata "></div>
+
+        <h4>Math.sqrt( )</h4>
+        <p>Metod Math.sqrt( ) kao rezultat vraća kvadratni koren zadatog broja. Metoda se pise
+            na sledeci nacin: <br>
+            <code>Math.sqrt(broj);</code></p>
+        <input type="text" id="poljeSqrt">
+        <button id="dugmeSqrt">Prikazi kvadratni koren</button>
+        <div id="prikaziSqrt" class="prikazRezultata "></div>
+
+        <h4>Math.round( )</h4>
+        <p>Metod Math.round() kao rezultat vraća najbliži celi broj. Ova funkcija vrši matematičko zaokruživanje. Ako
+            je decimalni deo tačno 0.5, zaokruživanje se vrši na prvi veći celi broj. Metoda se pise
+            na sledeci nacin: <br>
+            <code>Math.round(broj);</code></p>
+        <input type="text" id="poljeRound">
+        <button id="dugmeRound">Zaokruzi broj</button>
+        <div id="prikaziRound" class="prikazRezultata "></div>
+
+        <h4>Math.abs( )</h4>
+        <p>Metod Math.abs() kao rezultat vraća apsolutnu vrednost zadatog broja. Drugim rečima, negativan broj pretvara
+            u pozitivan, a pozitivne brojeve ne menja. Metoda se pisena sledeci nacin: <br>
+            <code>Math.abs(broj);</code></p>
+        <input type="text" id="poljeAbs">
+        <button id="dugmeAbs">Prikazi apsolutnu vrednost</button>
+        <div id="prikaziAbs" class="prikazRezultata"></div>
     </div>
 
     <script>
+        // 1. Event Atributi
         var onclickDiv = document.getElementById("onclick");
         onclickDiv.addEventListener('click', function () {
             this.style.color = 'yellow';
             this.style.backgroundColor = 'blue';
-        })
+        });
+
         var onblur = document.getElementById("onblur");
         onblur.addEventListener('blur', function () {
             this.style.color = 'yellow';
             this.style.backgroundColor = 'red';
             onblur.value = onblur.value.toUpperCase();
-        })
+        });
+
         var onfocus = document.getElementById("onfocus");
         onfocus.addEventListener('focus', function () {
             this.style.color = 'white';
             this.style.backgroundColor = 'red';
+        });
+
+        var oncontextmenu = document.getElementById("oncontextmenu");
+        oncontextmenu.addEventListener('contextmenu', function () {
+            this.style.color = 'yellow';
+        });
+
+        // 2. setInterval
+        var interval = document.getElementById("setInterval");
+        interval.addEventListener('click', function () {
+            setInterval(function () {
+                interval.style.color = 'yellow';
+            }, 2000);
+        });
+
+
+        // 3. localStorage
+        document.getElementById("dugmeUbacivanje").addEventListener('click', function (e) {
+            var vrednost = document.getElementById("ubacivanjePodataka").value;
+            localStorage.setItem("ime", vrednost);
+        });
+        document.getElementById("dugmeIzvlacenje").addEventListener('click', function (e) {
+            document.getElementById("izvlacenjePodataka").innerHTML = localStorage.getItem("ime");
+        });
+        document.getElementById("brisiMemoriju").addEventListener('click', function (e) {
+            localStorage.removeItem("ime");
+        });
+
+        // 4. sessionStorage
+        document.getElementById("dugmeUbacivanje1").addEventListener('click', function (e) {
+            var vrednost = document.getElementById("ubacivanjePodataka1").value;
+            sessionStorage.setItem("ime1", vrednost);
+        });
+
+        document.getElementById("dugmeIzvlacenje1").addEventListener('click', function (e) {
+            document.getElementById("izvlacenjePodataka1").innerHTML = sessionStorage.getItem("ime1");
+        });
+
+        document.getElementById("brisiMemoriju1").addEventListener('click', function (e) {
+            sessionStorage.removeItem("ime1");
+        });
+
+        // 5-6. Vazenje promenljivih
+        document.getElementById("mnozenje").addEventListener('click', function (e) {
+            var polje_1 = document.getElementById("polje1").value;
+            var polje_2 = document.getElementById("polje2").value;
+            document.getElementById("rezultat1").innerHTML = polje_1 * polje_2;
+        });
+
+        // 7. Razlika izmedju JSON-a i javaScript-a
+
+
+        // 8. Window objekat
+        document.getElementById("dugmeWindowInnerWidth").addEventListener('click', function (e) {
+            document.getElementById("prikaziWindowInnerWidth").innerHTML = window.innerWidth + " px";
+        });
+
+        document.getElementById("dugmeWindowInnerHeight").addEventListener('click', function (e) {
+            document.getElementById("prikaziWindowInnerHeight").innerHTML = window.innerHeight + " px";
+        });
+
+        document.getElementById("dugmeWindowPageXOffset").addEventListener('click', function (e) {
+            document.getElementById("prikaziWindowPageXOffset").innerHTML = window.pageXOffset + " px";
+        });
+
+        document.getElementById("dugmeWindowPageYOffset").addEventListener('click', function (e) {
+            document.getElementById("prikaziWindowPageYOffset").innerHTML = window.pageYOffset + " px";
+        });
+
+        document.getElementById("dugmeWindowScreenX").addEventListener('click', function (e) {
+            document.getElementById("prikaziWindowScreenX").innerHTML = window.screenX + " px";
+        });
+
+        document.getElementById("dugmeWindowScreenY").addEventListener('click', function (e) {
+            document.getElementById("prikaziWindowScreenY").innerHTML = window.screenY + " px";
+        });
+
+
+
+        // 9. Navigator objekat
+        document.getElementById("dugmeNavigatorAppCodeName").addEventListener('click', function (e) {
+            document.getElementById("prikaziNavigatorAppCodeName").innerHTML = window.navigator.appCodeName;
+        });
+
+        document.getElementById("dugmeNavigatorPlatform").addEventListener('click', function (e) {
+            document.getElementById("prikaziNavigatorPlatform").innerHTML = window.navigator.platform;
+        });
+
+        document.getElementById("dugmeNavigatorUserAgent").addEventListener('click', function (e) {
+            document.getElementById("prikaziNavigatorUserAgent").innerHTML = window.navigator.userAgent;
+        });
+
+        document.getElementById("dugmeNavigatorOnLine").addEventListener('click', function (e) {
+            document.getElementById("prikaziNavigatorOnLine").innerHTML = window.navigator.onLine;
+        });
+
+        document.getElementById("dugmeNavigatorJavaEnabled").addEventListener('click', function (e) {
+            document.getElementById("prikaziNavigatorJavaEnabled").innerHTML = window.navigator.javaEnabled();
+        });
+
+        // 10. History objekat
+        document.getElementById("dugmeHistoryLength").addEventListener('click', function (e) {
+            document.getElementById("rezultatHistoryLength").innerHTML = history.length;
+        });
+
+        document.getElementById("dugmeHistoryBack").addEventListener('click', function (e) {
+            window.history.back();
+        });
+
+        document.getElementById("dugmeHistoryForward").addEventListener('click', function (e) {
+            window.history.forward();
+        });
+
+        document.getElementById("dugmeHistoryGo").addEventListener('click', function (e) {
+            window.history.go(-1);
+        });
+
+        // 11. Screen objekat
+        document.getElementById("dugmeScreenWidth").addEventListener('click', function (e) {
+            document.getElementById("prikaziScreenWidth").innerHTML = "Sirina ekrana: " + screen.width + " px";
+        });
+
+        document.getElementById("dugmeScreenHeight").addEventListener('click', function (e) {
+            document.getElementById("prikaziScreenHeight").innerHTML = "Visina ekrana: " + screen.height + " px";
+        });
+
+        document.getElementById("dugmeScreenAvailWidth").addEventListener('click', function (e) {
+            document.getElementById("prikaziScreenAvailWidth").innerHTML = "Sirina ekrana: " + screen.availWidth + " px";
+        });
+
+        document.getElementById("dugmeScreenAvailHeight").addEventListener('click', function (e) {
+            document.getElementById("prikaziScreenAvailHeight").innerHTML = "Visina ekrana: " + screen.availHeight + " px";
+        });
+
+        document.getElementById("dugmeScreenColorDepth").addEventListener('click', function (e) {
+            document.getElementById("prikaziScreenColorDepth").innerHTML = "Dubina boja: " + screen.colorDepth + " bpp";
+        });
+
+        document.getElementById("dugmeScreenPixelDepth").addEventListener('click', function (e) {
+            document.getElementById("prikaziScreenPixelDepth").innerHTML = "Dubina pixela: " + screen.pixelDepth + " bpp";
+        });
+
+        // 12. Location objekat
+        document.getElementById("dugmeLocationHref").addEventListener('click', function (e) {
+            document.getElementById("prikaziLocationHref").innerHTML = window.location.href;
+        });
+
+        document.getElementById("dugmeLocationHostname").addEventListener('click', function (e) {
+            document.getElementById("prikaziLocationHostname").innerHTML = window.location.hostname;
+        });
+
+        document.getElementById("dugmeLocationPathname").addEventListener('click', function (e) {
+            document.getElementById("prikaziLocationPathname").innerHTML = window.location.pathname;
+        });
+
+        document.getElementById("dugmeLocationProtocol").addEventListener('click', function (e) {
+            document.getElementById("prikaziLocationProtocol").innerHTML = window.location.protocol;
+        });
+
+        document.getElementById("dugmeLocationHash").addEventListener('click', function (e) {
+            document.getElementById("prikaziLocationHash").innerHTML = window.location.hash;
+        });
+
+        document.getElementById("dugmeLocationPort").addEventListener('click', function (e) {
+            document.getElementById("prikaziLocationPort").innerHTML = window.location.port;
+        });
+
+        // 13. Document objekat
+        document.getElementById("dugmeDocumentWrite").addEventListener('click', function (e) {
+            var tekstDocumentWrite = document.getElementById("ubacivanjeDocumentWrite").value;
+            document.getElementById("prikaziDocumentWrite").innerHTML = document.write(tekstDocumentWrite);
+        });
+
+        document.getElementById("dugmeDocumentWriteIn").addEventListener('click', function (e) {
+            var tekstDocumentWriteIn = document.getElementById("ubacivanjeDocumentWriteIn").value;
+            document.getElementById("prikaziDocumentWriteIn").innerHTML = document.writeln(tekstDocumentWriteIn);
+        });
+
+        document.getElementById("dugmeDocumentTitle").addEventListener('click', function (e) {
+            var tekstDocumentTitle = document.getElementById("ubacivanjeDocumentTitle").value;
+            document.title = tekstDocumentTitle;
+        });
+
+        document.getElementById("dugmeDocumentDomain").addEventListener('click', function (e) {
+            document.getElementById("prikaziDocumentDomain").innerHTML = document.domain;
+        });
+
+        document.getElementById("dugmeDocumentReferrer").addEventListener('click', function (e) {
+            document.getElementById("prikaziDocumentReferrer").innerHTML = document.referrer;
+        });
+
+        document.getElementById("dugmeDocumentLastModified").addEventListener('click', function (e) {
+            document.getElementById("prikaziDocumentLastModified").innerHTML = document.lastModified;
+        });
+
+        document.getElementById("dugmeDocumentInputEncoding").addEventListener('click', function (e) {
+            document.getElementById("prikaziDocumentInputEncoding").innerHTML = document.inputEncoding;
+        });
+
+        // 14. Metode i svojstva u DOM-u
+
+
+        // 15. Date objekti
+        document.getElementById("dugmeDate_now").addEventListener('click', function (e) {
+            document.getElementById("prikaziDate_now").innerHTML = Date.now();
+        });
+
+        document.getElementById("dugmeNewDate").addEventListener('click', function (e) {
+            document.getElementById("prikaziNewDate").innerHTML = new Date();
+        });
+
+        document.getElementById("dugmeFullYear").addEventListener('click', function (e) {
+            var d = new Date();
+            document.getElementById("prikaziFullYear").innerHTML = d.getFullYear();
+        });
+
+        document.getElementById("dugmeMonth").addEventListener('click', function (e) {
+            var d = new Date();
+            document.getElementById("prikaziMonth").innerHTML = d.getMonth();
+        });
+
+        document.getElementById("dugmeDate").addEventListener('click', function (e) {
+            var d = new Date();
+            document.getElementById("prikaziDate").innerHTML = d.getDate();
+        });
+
+        document.getElementById("dugmeDay").addEventListener('click', function (e) {
+            var d = new Date();
+            document.getElementById("prikaziDay").innerHTML = d.getDay();
+        });
+
+        document.getElementById("dugmeHours").addEventListener('click', function (e) {
+            var d = new Date();
+            document.getElementById("prikaziHours").innerHTML = d.getHours();
+        });
+
+        document.getElementById("dugmeMinutes").addEventListener('click', function (e) {
+            var d = new Date();
+            document.getElementById("prikaziMinutes").innerHTML = d.getMinutes();
+        });
+
+        document.getElementById("dugmeSeconds").addEventListener('click', function (e) {
+            var d = new Date();
+            document.getElementById("prikaziSeconds").innerHTML = d.getSeconds();
+        });
+
+        document.getElementById("dugmeMilliseconds").addEventListener('click', function (e) {
+            var d = new Date();
+            document.getElementById("prikaziMilliseconds").innerHTML = d.getMilliseconds();
+        });
+
+        // 16. String metode
+        document.getElementById("dugmeDuzinaStringa").addEventListener('click', function (e) {
+            var str = document.getElementById("duzinaStringa").value;
+            var string = str.toString();
+            document.getElementById("prikaziDuzinaStringa").innerHTML = string.length;
         })
+
+        document.getElementById("dugmeCharAt").addEventListener('click', function (e) {
+            var str = document.getElementById("CharAt").value;
+            var string = document.getElementById("CharAt1").value;
+            document.getElementById("prikaziCharAt").innerHTML = str.charAt(string);
+        })
+
+        document.getElementById("dugmeCharCodeAt").addEventListener('click', function (e) {
+            var str = document.getElementById("CharCodeAt").value;
+            var string = document.getElementById("CharCodeAt1").value;
+            document.getElementById("prikaziCharCodeAt").innerHTML = str.charCodeAt(string);
+        })
+
+        document.getElementById("dugmeConcat").addEventListener('click', function (e) {
+            var concat = document.getElementById("Concat").value;
+            var concat1 = document.getElementById("Concat1").value;
+            document.getElementById("prikaziConcat").innerHTML = concat.concat(concat1);
+        })
+
+        document.getElementById("dugmeRepeat").addEventListener('click', function (e) {
+            var repeat = document.getElementById("Repeat").value;
+            var repeat1 = document.getElementById("Repeat1").value;
+            document.getElementById("prikaziRepeat").innerHTML = repeat.repeat(repeat1);
+        })
+
+        document.getElementById("dugmeSlice").addEventListener('click', function (e) {
+            var slice = document.getElementById("Slice").value;
+            var slice1 = document.getElementById("Slice1").value;
+            var slice2 = document.getElementById("Slice2").value;
+            document.getElementById("prikaziSlice").innerHTML = slice.slice(slice1, slice2);
+        })
+
+        document.getElementById("dugmeSubstring").addEventListener('click', function (e) {
+            var substring = document.getElementById("Substring").value;
+            var substring1 = document.getElementById("Substring1").value;
+            var substring2 = document.getElementById("Substring2").value;
+            document.getElementById("prikaziSubstring").innerHTML = substring.substring(substring1, substring2);
+        })
+
+        document.getElementById("dugmeSubstr").addEventListener('click', function (e) {
+            var substr = document.getElementById("Substr").value;
+            var substr1 = document.getElementById("Substr1").value;
+            var substr2 = document.getElementById("Substr2").value;
+            document.getElementById("prikaziSubstr").innerHTML = substr.substr(substr1, substr2);
+        })
+
+        document.getElementById("dugmeToLowerCase").addEventListener('click', function (e) {
+            var tolowercase = document.getElementById("ToLowerCase").value;
+            document.getElementById("prikaziToLowerCase").innerHTML = tolowercase.toLowerCase();
+        })
+
+        document.getElementById("dugmeToUpperCase").addEventListener('click', function (e) {
+            var touppercase = document.getElementById("ToUpperCase").value;
+            document.getElementById("prikaziToUpperCase").innerHTML = touppercase.toUpperCase();
+        })
+
+        document.getElementById("dugmeTrim").addEventListener('click', function (e) {
+            var t = document.getElementById("Trim").value;
+            var trim = t.toString();
+            document.getElementById("prikaziTrim").innerHTML = trim.trim();
+        })
+        // 17. Metode za rad sa nizovima
+
+
+        // 18. Metode Math objekta
+        document.getElementById("dugmePI").addEventListener('click', function (e) {
+            document.getElementById("prikaziPI").innerHTML = Math.PI;
+        })
+
+        document.getElementById("dugmePow").addEventListener('click', function (e) {
+            var pow1 = document.getElementById("poljePow1").value;
+            var pow2 = document.getElementById("poljePow2").value;
+            document.getElementById("prikaziPow").innerHTML = Math.pow(pow1, pow2);
+        })
+
+        document.getElementById("dugmeRandom").addEventListener('click', function (e) {
+            document.getElementById("prikaziRandom").innerHTML = Math.random();
+        })
+
+        document.getElementById("dugmeCeil").addEventListener('click', function (e) {
+            var ceil = document.getElementById("poljeCeil").value;
+            document.getElementById("prikaziCeil").innerHTML = Math.ceil(ceil);
+        })
+
+        document.getElementById("dugmeFloor").addEventListener('click', function (e) {
+            var floor = document.getElementById("poljeFloor").value;
+            document.getElementById("prikaziFloor").innerHTML = Math.floor(floor);
+        })
+
+        document.getElementById("dugmeSqrt").addEventListener('click', function (e) {
+            var sqrt = document.getElementById("poljeSqrt").value;
+            document.getElementById("prikaziSqrt").innerHTML = Math.sqrt(sqrt);
+        })
+
+        document.getElementById("dugmeRound").addEventListener('click', function (e) {
+            var round = document.getElementById("poljeRound").value;
+            document.getElementById("prikaziRound").innerHTML = Math.round(round);
+        })
+
+        document.getElementById("dugmeAbs").addEventListener('click', function (e) {
+            var abs = document.getElementById("poljeAbs").value;
+            document.getElementById("prikaziAbs").innerHTML = Math.abs(abs);
+        })
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 
