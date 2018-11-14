@@ -1163,110 +1163,110 @@
             var str = document.getElementById("duzinaStringa").value;
             var string = str.toString();
             document.getElementById("prikaziDuzinaStringa").innerHTML = string.length;
-        })
+        });
 
         document.getElementById("dugmeCharAt").addEventListener('click', function (e) {
             var str = document.getElementById("CharAt").value;
             var string = document.getElementById("CharAt1").value;
             document.getElementById("prikaziCharAt").innerHTML = str.charAt(string);
-        })
+        });
 
         document.getElementById("dugmeCharCodeAt").addEventListener('click', function (e) {
             var str = document.getElementById("CharCodeAt").value;
             var string = document.getElementById("CharCodeAt1").value;
             document.getElementById("prikaziCharCodeAt").innerHTML = str.charCodeAt(string);
-        })
+        });
 
         document.getElementById("dugmeConcat").addEventListener('click', function (e) {
             var concat = document.getElementById("Concat").value;
             var concat1 = document.getElementById("Concat1").value;
             document.getElementById("prikaziConcat").innerHTML = concat.concat(concat1);
-        })
+        });
 
         document.getElementById("dugmeRepeat").addEventListener('click', function (e) {
             var repeat = document.getElementById("Repeat").value;
             var repeat1 = document.getElementById("Repeat1").value;
             document.getElementById("prikaziRepeat").innerHTML = repeat.repeat(repeat1);
-        })
+        });
 
         document.getElementById("dugmeSlice").addEventListener('click', function (e) {
             var slice = document.getElementById("Slice").value;
             var slice1 = document.getElementById("Slice1").value;
             var slice2 = document.getElementById("Slice2").value;
             document.getElementById("prikaziSlice").innerHTML = slice.slice(slice1, slice2);
-        })
+        });
 
         document.getElementById("dugmeSubstring").addEventListener('click', function (e) {
             var substring = document.getElementById("Substring").value;
             var substring1 = document.getElementById("Substring1").value;
             var substring2 = document.getElementById("Substring2").value;
             document.getElementById("prikaziSubstring").innerHTML = substring.substring(substring1, substring2);
-        })
+        });
 
         document.getElementById("dugmeSubstr").addEventListener('click', function (e) {
             var substr = document.getElementById("Substr").value;
             var substr1 = document.getElementById("Substr1").value;
             var substr2 = document.getElementById("Substr2").value;
             document.getElementById("prikaziSubstr").innerHTML = substr.substr(substr1, substr2);
-        })
+        });
 
         document.getElementById("dugmeToLowerCase").addEventListener('click', function (e) {
             var tolowercase = document.getElementById("ToLowerCase").value;
             document.getElementById("prikaziToLowerCase").innerHTML = tolowercase.toLowerCase();
-        })
+        });
 
         document.getElementById("dugmeToUpperCase").addEventListener('click', function (e) {
             var touppercase = document.getElementById("ToUpperCase").value;
             document.getElementById("prikaziToUpperCase").innerHTML = touppercase.toUpperCase();
-        })
+        });
 
         document.getElementById("dugmeTrim").addEventListener('click', function (e) {
             var t = document.getElementById("Trim").value;
             var trim = t.toString();
             document.getElementById("prikaziTrim").innerHTML = trim.trim();
-        })
+        });
         // 17. Metode za rad sa nizovima
 
 
         // 18. Metode Math objekta
         document.getElementById("dugmePI").addEventListener('click', function (e) {
             document.getElementById("prikaziPI").innerHTML = Math.PI;
-        })
+        });
 
         document.getElementById("dugmePow").addEventListener('click', function (e) {
             var pow1 = document.getElementById("poljePow1").value;
             var pow2 = document.getElementById("poljePow2").value;
             document.getElementById("prikaziPow").innerHTML = Math.pow(pow1, pow2);
-        })
+        });
 
         document.getElementById("dugmeRandom").addEventListener('click', function (e) {
             document.getElementById("prikaziRandom").innerHTML = Math.random();
-        })
+        });
 
         document.getElementById("dugmeCeil").addEventListener('click', function (e) {
             var ceil = document.getElementById("poljeCeil").value;
             document.getElementById("prikaziCeil").innerHTML = Math.ceil(ceil);
-        })
+        });
 
         document.getElementById("dugmeFloor").addEventListener('click', function (e) {
             var floor = document.getElementById("poljeFloor").value;
             document.getElementById("prikaziFloor").innerHTML = Math.floor(floor);
-        })
+        });
 
         document.getElementById("dugmeSqrt").addEventListener('click', function (e) {
             var sqrt = document.getElementById("poljeSqrt").value;
             document.getElementById("prikaziSqrt").innerHTML = Math.sqrt(sqrt);
-        })
+        });
 
         document.getElementById("dugmeRound").addEventListener('click', function (e) {
             var round = document.getElementById("poljeRound").value;
             document.getElementById("prikaziRound").innerHTML = Math.round(round);
-        })
+        });
 
         document.getElementById("dugmeAbs").addEventListener('click', function (e) {
             var abs = document.getElementById("poljeAbs").value;
             document.getElementById("prikaziAbs").innerHTML = Math.abs(abs);
-        })
+        });
 
 
 
