@@ -1,0 +1,106 @@
+h1 {
+    font-size: 40px;
+    margin: 25px 0px;
+}
+
+body {
+    margin: auto;
+    text-align: center;
+    font-family: roboto;
+}
+
+.container {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    box-shadow: 5px 5px 5px black;
+}
+
+.polja {
+    height: 100px;
+    width: 100px;
+    font-size: 45px;
+}
+
+.polja:hover {
+    -webkit-animation: menjajBoju 2s linear infinite alternate both;
+    animation: menjajBoju 2s linear infinite alternate both;
+}
+
+@-webkit-keyframes menjajBoju {
+    0% {
+        background: #19dcea;
+    }
+    50% {
+        background: #b22cff;
+    }
+    100% {
+        background: #ada028;
+    }
+}
+
+@keyframes menjajBoju {
+    0% {
+        background: #19dcea;
+    }
+    50% {
+        background: #b22cff;
+    }
+    100% {
+        background: #ada028;
+    }
+}
+
+td {
+    border: 3px groove black;
+    border-collapse: collapse;
+}
+
+.obavestenja {
+    height: 50px;
+    width: 300px;
+    margin: 15px auto;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+#porukaIgre {
+    font-size: 30px;
+}
+
+.blinkanje {
+    -webkit-animation: blinkanje 5s infinite both;
+    animation: blinkanje 3s infinite both;
+}
+
+@-webkit-keyframes blinkanje {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+@keyframes blinkanje {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+#btn {
+    border-radius: 10px;
+    padding: 5px 10px;
+    box-shadow: 5px 5px 5px black;
+    font-size: 20px;
+}
+
+#porukaIgre {
+    color: red;
+}
