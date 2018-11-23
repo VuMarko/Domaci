@@ -1,1 +1,1 @@
-Play game on https://vumarko.github.io/Domaci/Iks-oks%(tic-tac-toe)/ixox.html
+Play game on https://vumarko.github.io/Domaci/Iks-oks%20(tic-tac-toe)/ixox.html
